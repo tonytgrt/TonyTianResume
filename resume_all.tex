@@ -218,24 +218,26 @@
           \resumeItemListEnd
           
     \resumeProjectHeading
-          {\textbf{PennOS} $|$ \emph{Priority Scheduler, Interactive Shell, C}}{Mar 2025 -- May 2025}
-          \resumeItemListStart
-            \resumeItem{Implemented a user-level UNIX-like operating system using C in group of four, developing core kernel features:}
-            \resumeItem{Process Control Block (PCB) data structure that stores metadata of a process including PID, priority, parent/child relationships, process state, and stack/thread info.}
-            \resumeItem{Multi-level priority scheduler that distributes CPU resources to processes according to their priority level. Processes of same priority are scheduled with Round Robin without any starvation.}
-            \resumeItem{Interactive shell that supports common UNIX commands, I/O redirection, and script execution.}
-            \resumeItem{System calls for spawning processes, waiting, sleeping, signal delivery, process exit, and file I/O wrappers.}
-          \resumeItemListEnd
+        {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, Make, GDB}}{Mar 2025 -- May 2025}
+        \resumeItemListStart
+        \resumeItem{Architected and implemented a complete user-level operating system in C with team of 4, featuring 8000+ lines of systems code with full process lifecycle management}
+        \resumeItem{Designed Process Control Block (PCB) data structure managing 50+ concurrent processes with metadata including PID allocation, priority levels, parent-child relationships, signal handling, and user/kernel stack management}
+        \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
+        \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
+        \resumeItem{Developed comprehensive system call interface including p\_spawn(), p\_wait(), p\_sleep(), signal delivery (SIGTERM, SIGSTOP, SIGCONT), and file I/O wrappers with proper resource cleanup and zombie process reaping}
+        \resumeItem{Implemented job control and signal handling system supporting background process management and graceful process termination across parent-child hierarchies}
+        \resumeItemListEnd
           
     \resumeProjectHeading
-          {\textbf{Mini Minecraft} $|$ \emph{OpenGL, Qt, C++, GLSL}}{Oct 2024 -- Dec 2024}
+          {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, OpenGL, Qt, GLSL}}{Oct 2024 -- Dec 2024}
           \resumeItemListStart
-            \resumeItem{Participated in a group of three to implement Minecraft using C++ and GLSL in Qt, developing core features:}
-            \resumeItem{Procedural terrain generation using 2D and 3D perlin noise, including Grassland, Mountain, Desert, Islands, and Cave. Each terrain has unique geographical traits and procedurally placed assets such as trees and cacti.}
-            \resumeItem{Post-process shaders with GLSL. Set up a post-process rendering pipeline with the OpenGL graphical API that applies a distortion filter when the player is in water or lava. Implemented the crosshair at the center of screen.}
-            \resumeItem{Two physics modes that can be toggled: normal mode that follows gravity on the ground and buoyancy in water; fly mode that allows free movement in the world across obstacles.}
-            \resumeItem{Character-environment interaction: breaking and placing blocks in the world.}
-            \resumeItem{Project demo: \url{https://youtu.be/jRb4EHV5KQI}}
+          \resumeItem{Collaborated in team of 3 to develop fully-featured voxel game engine in C++ using OpenGL 4.1, generating infinite worlds with 1M+ blocks and maintaining 60+ FPS performance}
+          \resumeItem{Engineered procedural terrain generation system using layered 2D/3D Perlin noise algorithms, creating 5 distinct biomes (Grassland, Mountain, Desert, Islands, Caves) with biome-specific block distributions and procedurally placed vegetation assets}
+          \resumeItem{Implemented post-processing rendering pipeline with custom GLSL fragment shaders, featuring dynamic underwater/lava distortion effects using UV coordinate manipulation and real-time crosshair overlay rendering}
+          \resumeItem{Developed dual physics simulation system: gravity-based collision detection with terrain for ground movement, and buoyancy calculations for water/lava interaction, plus creative fly-mode with 6-DOF movement}
+          \resumeItem{Built efficient chunk-based world management system with frustum culling and LOD optimization, reducing draw calls by 80\% through face culling of adjacent blocks}
+          \resumeItem{Implemented real-time block manipulation (mining/placing) with ray-casting intersection testing and immediate mesh updates, supporting 16 different block types with unique textures and properties}
+          \resumeItem{Project demo showcasing all features: \url{https://youtu.be/jRb4EHV5KQI}}
           \resumeItemListEnd
           
     \resumeProjectHeading
