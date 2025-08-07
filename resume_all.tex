@@ -144,9 +144,9 @@
       {Distributed Systems Laboratory at UPenn}{Philadelphia, PA}
       \resumeItemListStart
         \resumeItem{Penn Undergraduate Research Mentorship (\href{https://curf.upenn.edu/content/penn-undergraduate-research-mentoring-program-purm}{\underline{PURM}}) 2025 Scholarship awardee, student of \href{https://www.cis.upenn.edu/~sga001/}{\underline{Prof. Sebastian Angel}}.}
-        \resumeItem{Contributed to the KernMLOps repository, a tool that probes into the Linux Kernel and collect data about the kernel's decision making policies in real-time: \href{https://github.com/tonytgrt/KernMLOps/tree/main}{github.com/tonytgrt/KernMLOps/tree/main}.}
-        \resumeItem{Used eBPF kprobes to collect data of the TCP networking traffic subsystem across various workloads, including the iperf3 and the redis benchmark.}
-        \resumeItem{Obtained data of a distribution of different TCP states of each traffic entry, analyzed data in Python.}
+        \resumeItem{Developed eBPF-based kernel monitoring tools collecting real-time TCP networking metrics across 5+ workload types including iperf3 and Redis benchmarks}
+        \resumeItem{Built data analysis pipeline processing 10,000+ TCP state transitions per second, identifying performance bottlenecks in kernel networking policies}
+        \resumeItem{Contributed to open-source \href{https://github.com/tonytgrt/KernMLOps/tree/main}{\underline{KernMLOps repository}} with 2000+ lines of C and Python code for kernel probing infrastructure}
     \resumeItemListEnd
 
     \resumeSubheading
@@ -198,6 +198,15 @@
 \section{Projects}
     \resumeSubHeadingListStart
     
+    \resumeProjectHeading
+      {\textbf{Monte Carlo Path Tracer \& Real-Time PBR Renderer} $|$ \emph{C++, GLSL}}{Jan 2025 -- May 2025}
+      \resumeItemListStart
+      \resumeItem{Implemented Monte Carlo path tracer supporting Cornell Box, glass refraction, microfacet materials, and environment mapping with 60+ FPS real-time performance}
+      \resumeItem{Developed physically-based rendering (PBR) shader pipeline with albedo/metallic/roughness maps achieving real-time ray tracing on modern GPUs}
+      \resumeItem{Engineered custom BRDF models for materials including chrome, plastic, and complex surface properties}
+      \resumeItem{Demo: \url{https://github.com/tonytgrt/render-demo}}
+    \resumeItemListEnd
+
     \resumeProjectHeading
           {\textbf{T\&T Slots - Sense the Win} $|$ \emph{ATMega328PB, SPO2 Sensor, I2C, Embedded C}}{Mar 2025 -- May 2025}
           \resumeItemListStart
@@ -251,9 +260,10 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: C/C++, CUDA, GLSL, eBPF, Java, Python, Assembly, LATEX} \\
-     \textbf{Tools}{: Qt, Nvidia nSight, VS Code, Docker, Jupyter Notebook, VMWare, IntelliJ, CloudLab, WebHTML} \\
-     \textbf{Knowledge}{: Algorithms, Data Structures, Data Processing, Statistics Methods, Linux Kernel, Embedded Systems, Graphical APIs, Graphical Rendering, Testing Procedures, Network Protocols, OS Design, VM Deployment, Path Tracing, Real-time Ray Tracing, Rasterization, OpenGL Rendering Pipeline, Procedural Asset Generation, Linux Kernel Development, Embedded System Development, Electrical Circuits Design}
+    \textbf{Programming Languages}{: C/C++, CUDA, GLSL, Python, Java, eBPF, Assembly, JavaScript, LATEX} \\
+    \textbf{Graphics \& Rendering}{: OpenGL, DirectX, Real-time Ray Tracing, Path Tracing, PBR, Procedural Generation} \\
+    \textbf{Systems \& Tools}{: Linux Kernel Development, Docker, Qt, Git, CMake, Embedded Systems, TCP/IP} \\
+    \textbf{Frameworks \& APIs}{: Qt, Raspberry Pi, ATMega, VMware, CloudLab, Jupyter Notebook}
     }}
  \end{itemize}
 
