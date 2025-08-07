@@ -1,0 +1,202 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.0in}
+
+
+\urlstyle{same}
+
+%\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-7pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tony Yiding Tian} \\ \vspace{1pt}
+    \small Philadelphia, PA $|$ (267)249-1202 $|$ \href{mailto:tonytg@seas.upenn.edu}{\underline{tonytg@seas.upenn.edu}} $|$ 
+    \href{https://github.com/tonytgrt}{\underline{github.com/tonytgrt}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Pennsylvania - School of Engineering and Applied Sciences}{Philadelphia, PA}
+      {B.E. Computer Engineering, M.E. Computer Graphics and Game Technology}{May 2027}
+      \resumeItemListStart
+        \resumeItem{GPA: 3.74 | Relevant Courses: GPU Programming, Advanced Rendering, Interactive Computer Graphics, Operating Systems Design \& Implementation, Data Structure \& Algorithm, Embedded Systems, Electrical Circuit}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Linux Kernel Policies Research Assistant - PURM Scholar}{May 2025 -- Present}
+      {Learning Directed Operating System (\href{https://ldos.utexas.edu/}{\underline{LDOS}}), Prof. Sebastian Angel}{Philadelphia, PA}
+      \resumeItemListStart
+        \resumeItem{Developed eBPF-based kernel monitoring infrastructure collecting real-time TCP networking metrics across 5+ workload types including iperf3, Redis benchmarks, and high-frequency trading simulations}
+        \resumeItem{Engineered high-performance data analysis pipeline processing 10,000+ TCP state transitions per second, identifying critical performance bottlenecks in kernel networking policies and congestion control algorithms}
+        \resumeItem{Architected and contributed 2000+ lines of C and Python code to open-source \href{https://github.com/tonytgrt/KernMLOps/tree/main}{\underline{KernMLOps repository}}, implementing kernel probing infrastructure used by 15+ researchers}
+      \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Beta Test Engineer \& QA Analyst}{Dec 2022 -- Oct 2023}
+      {miHoYo - Genshin Impact (AAA Mobile Gaming)}{Remote}
+      \resumeItemListStart
+        \resumeItem{Selected as exclusive beta tester for Genshin Impact, a \$4B+ revenue mobile game with 60M+ monthly active users, participating in pre-release testing cycles every 6 weeks}
+        \resumeItem{Conducted comprehensive quality assurance testing for 10+ character releases, each generating \$1M+ in revenue, ensuring gameplay balance and identifying critical performance issues before public launch}
+        \resumeItem{Performed systematic testing of open-world gameplay mechanics including combat systems, puzzle design, and performance optimization across multiple mobile platforms (iOS, Windows)}
+        \resumeItem{Provided detailed feedback on character design, combat mechanics, and user experience, influencing design decisions for characters with combined revenue exceeding \$10M}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+    
+    \resumeProjectHeading
+      {\textbf{Monte Carlo Path Tracer \& Real-Time PBR Renderer} $|$ \emph{C++, GLSL, OpenGL}}{Jan 2025 -- May 2025}
+      \resumeItemListStart
+      \resumeItem{Implemented Monte Carlo path tracer supporting Cornell Box, glass refraction, microfacet materials, and environment mapping}
+      \resumeItem{Developed physically-based rendering (PBR) shader pipeline with albedo/metallic/roughness maps achieving real-time ray tracing on modern GPUs with 60+ FPS real-time performance}
+      \resumeItem{Engineered custom BRDF models for materials including chrome, plastic, and complex surface properties}
+      \resumeItem{Demo: \url{https://github.com/tonytgrt/render-demo}}
+    \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{PennOS - Multi-threaded UNIX-like Operating System} $|$ \emph{C, Assembly, Make, GDB}}{Mar 2025 -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Architected and implemented a complete user-level operating system in C with team of 4, featuring 8000+ lines of systems code with full process lifecycle management}
+        \resumeItem{Designed Process Control Block (PCB) data structure managing 50+ concurrent processes with metadata including PID allocation, priority levels, parent-child relationships, signal handling, and user/kernel stack management}
+        \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
+        \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
+      \resumeItemListEnd
+          
+    \resumeProjectHeading
+      {\textbf{Mini Minecraft - Voxel-based 3D World Engine} $|$ \emph{C++, OpenGL 4.1, Qt, GLSL}}{Oct 2024 -- Dec 2024}
+      \resumeItemListStart
+        \resumeItem{Collaborated in team of 3 to develop fully-featured voxel game engine in C++ using OpenGL in Qt}
+          \resumeItem{Engineered procedural terrain generation system using layered 2D/3D Perlin noise algorithms, creating 5 distinct biomes (Grassland, Mountain, Desert, Islands, Caves) with biome-specific block distributions and procedurally placed vegetation assets}
+          \resumeItem{Developed dual physics simulation system: gravity-based collision detection with terrain for ground movement, and buoyancy calculations for water/lava interaction, plus creative fly-mode with 6-DOF movement}
+          \resumeItem{Project demo showcasing all features: \url{https://youtu.be/jRb4EHV5KQI}}
+      \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
+\enlargethispage{20pt}
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Programming Languages}{: C/C++, CUDA, GLSL, Python, Java, eBPF, Assembly, JavaScript, LATEX} \\
+    \textbf{Graphics \& Rendering}{: OpenGL, DirectX, Real-time Ray Tracing, Path Tracing, PBR, Procedural Generation} \\
+    \textbf{Systems \& Tools}{: Linux Kernel Development, Docker, Qt, Git, CMake, Embedded Systems, TCP/IP} \\
+    \textbf{Frameworks \& APIs}{: Qt, Raspberry Pi, ATMega, VMware, CloudLab, Jupyter Notebook}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
