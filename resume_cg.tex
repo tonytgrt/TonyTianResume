@@ -1,0 +1,193 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.0in}
+
+
+\urlstyle{same}
+
+%\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-7pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tony Yiding Tian} \\ \vspace{1pt}
+    \small Philadelphia, PA $|$ (267)249-1202 $|$ \href{mailto:tonytg@seas.upenn.edu}{\underline{tonytg@seas.upenn.edu}} $|$ 
+    \href{https://github.com/tonytgrt}{\underline{github.com/tonytgrt}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Pennsylvania - School of Engineering and Applied Sciences}{Philadelphia, PA}
+      {B.S.E. in Computer Engineering, M.S.E. in Computer Graphics and Game Technology}{May 2027}
+      \resumeItemListStart
+        \resumeItem{GPA: 3.74 | Relevant Courses: GPU Programming, Advanced Rendering, Interactive Computer Graphics, Real-Time Rendering, Game Engine Programming, Data Structures \& Algorithms, Operating Systems}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Product Development Researcher \& UX Designer}{Jan 2025 -- May 2025}
+      {YesTech Corporation - Best Friends Network Social Platform}{Remote}
+      \resumeItemListStart
+        \resumeItem{Led user-centric product development for social media application with AR-inspired features targeting Gen-Z demographic with 10,000+ beta users, focusing on creative content tools}
+        \resumeItem{Designed "Friendship Portal" interactive feature enabling real-time visual mood sharing between users, implementing UI/UX principles that drove 40\% increase in user engagement}
+        \resumeItem{Conducted A/B testing across 500+ users for visual effects and interaction patterns, iterating on design based on user feedback to optimize creative expression features}
+        \resumeItem{Collaborated with mobile development team to implement intuitive creator tools, reducing content creation time by 35\% through streamlined workflows}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Beta Test Engineer \& QA Analyst}{Dec 2022 -- Oct 2023}
+      {miHoYo - Genshin Impact (AAA Mobile Gaming)}{Remote}
+      \resumeItemListStart
+        \resumeItem{Selected as exclusive beta tester for Genshin Impact, a \$4B+ revenue game with 60M+ MAU featuring extensive visual effects and real-time rendering systems}
+        \resumeItem{Tested 10+ character releases with unique particle effects, shaders, and animations, ensuring visual quality and performance optimization across iOS/Android platforms}
+        \resumeItem{Evaluated open-world rendering performance including LOD systems, texture streaming, and post-processing effects, identifying optimization opportunities for mobile GPUs}
+        \resumeItem{Provided detailed feedback on visual effects, animation systems, and UI/UX design that influenced character designs generating \$10M+ revenue}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+    
+    \resumeProjectHeading
+      {\textbf{Real-Time Physically Based Renderer} $|$ \emph{C++, GLSL, OpenGL}}{Jan 2025 -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Engineered real-time PBR rendering pipeline achieving 60+ FPS with dynamic environment mapping, perfect for AR/VR applications requiring photorealistic materials}
+        \resumeItem{Implemented advanced BRDF models supporting metallic/roughness workflows with texture mapping, enabling realistic material representation essential for immersive AR effects}
+        \resumeItem{Developed custom post-processing effects including bloom, tone mapping, and depth-of-field using fragment shaders, similar to TikTok effect filters}
+        \resumeItem{Built modular graphics API abstraction layer supporting OpenGL with extensibility for Vulkan/Metal backends}
+        \resumeItem{Portfolio showcasing rendering capabilities: \url{https://github.com/tonytgrt/TonyTianRenderDemo}}
+      \resumeItemListEnd
+          
+    \resumeProjectHeading
+      {\textbf{Mini Minecraft - Voxel Game Engine} $|$ \emph{C++, OpenGL, Qt, GLSL}}{Oct 2024 -- Dec 2024}
+      \resumeItemListStart
+        \resumeItem{Built complete 3D game engine from scratch featuring procedural world generation, real-time rendering pipeline, and physics simulation - core skills for effect creation tools}
+        \resumeItem{Implemented post-processing visual effects system with custom GLSL shaders for underwater distortion, dynamic lighting, and particle effects similar to AR filter development}
+        \resumeItem{Developed intuitive block manipulation system with ray-casting and immediate visual feedback, demonstrating strong UI/UX design sense for creative tools}
+        \resumeItem{Optimized rendering performance through frustum culling and face culling, reducing draw calls by 80\% while maintaining 60+ FPS with 1M+ rendered blocks}
+        \resumeItem{Created procedural content generation using Perlin noise for 5 distinct biomes, showcasing algorithmic creativity applicable to effect generation}
+        \resumeItem{Demo video: \url{https://youtu.be/jRb4EHV5KQI}}
+      \resumeItemListEnd 
+          
+    \resumeSubHeadingListEnd
+
+\enlargethispage{20pt}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Graphics/Rendering}{: OpenGL, WebGL, GLSL/HLSL shaders, Real-time rendering, Ray tracing, PBR} \\
+    \textbf{Game Dev/3D}{: Path Tracing, Deferred Rendering, Rasterization, Animation systems, Post-processing} \\
+    \textbf{Programming}{: C/C++ (advanced), Python, CUDA, Multi-threading, Memory management} \\
+    \textbf{Tools/Platforms}{: Git, Qt, Visual Studio, Cross-platform development (Windows, macOS, iOS, Android)}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
