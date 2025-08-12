@@ -154,25 +154,25 @@
     \resumeSubHeadingListStart
     
     \resumeProjectHeading
-      {\textbf{Real-Time Physically Based Renderer} $|$ \emph{C++, GLSL, OpenGL}}{Jan 2025 -- May 2025}
+      {\textbf{Monte Carlo Path Tracer \& Real-Time PBR Renderer} $|$ \emph{C++, GLSL}}{Jan 2025 -- May 2025}
       \resumeItemListStart
-        \resumeItem{Engineered real-time PBR rendering pipeline achieving 60+ FPS with dynamic environment mapping, perfect for AR/VR applications requiring photorealistic materials}
-        \resumeItem{Implemented advanced BRDF models supporting metallic/roughness workflows with texture mapping, enabling realistic material representation essential for immersive AR effects}
-        \resumeItem{Developed custom post-processing effects including bloom, tone mapping, and depth-of-field using fragment shaders, similar to TikTok effect filters}
-        \resumeItem{Built modular graphics API abstraction layer supporting OpenGL with extensibility for Vulkan/Metal backends}
-        \resumeItem{Portfolio showcasing rendering capabilities: \url{https://github.com/tonytgrt/TonyTianRenderDemo}}
-      \resumeItemListEnd
+      \resumeItem{Implemented Monte Carlo path tracer supporting Cornell Box, glass refraction, microfacet materials, and environment mapping}
+      \resumeItem{Developed physically-based rendering (PBR) shader pipeline with albedo/metallic/roughness maps achieving real-time ray tracing on modern GPUs with 60+ FPS real-time performance}
+      \resumeItem{Engineered custom BRDF models for materials including chrome, plastic, and complex surface properties}
+      \resumeItem{Demo: \url{https://github.com/tonytgrt/TonyTianRenderDemo}}
+    \resumeItemListEnd
           
     \resumeProjectHeading
-      {\textbf{Mini Minecraft - Voxel Game Engine} $|$ \emph{C++, OpenGL, Qt, GLSL}}{Oct 2024 -- Dec 2024}
-      \resumeItemListStart
-        \resumeItem{Built complete 3D game engine from scratch featuring procedural world generation, real-time rendering pipeline, and physics simulation - core skills for effect creation tools}
-        \resumeItem{Implemented post-processing visual effects system with custom GLSL shaders for underwater distortion, dynamic lighting, and particle effects similar to AR filter development}
-        \resumeItem{Developed intuitive block manipulation system with ray-casting and immediate visual feedback, demonstrating strong UI/UX design sense for creative tools}
-        \resumeItem{Optimized rendering performance through frustum culling and face culling, reducing draw calls by 80\% while maintaining 60+ FPS with 1M+ rendered blocks}
-        \resumeItem{Created procedural content generation using Perlin noise for 5 distinct biomes, showcasing algorithmic creativity applicable to effect generation}
-        \resumeItem{Demo video: \url{https://youtu.be/jRb4EHV5KQI}}
-      \resumeItemListEnd 
+          {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, OpenGL, Qt, GLSL}}{Oct 2024 -- Dec 2024}
+          \resumeItemListStart
+          \resumeItem{Collaborated in team of 3 to develop fully-featured voxel game engine in C++ using OpenGL, generating infinite worlds with 1M+ blocks and maintaining 60+ FPS performance}
+          \resumeItem{Engineered procedural terrain generation system using layered 2D/3D Perlin noise algorithms, creating 5 distinct biomes (Grassland, Mountain, Desert, Islands, Caves) with biome-specific block distributions and procedurally placed vegetation assets}
+          \resumeItem{Implemented post-processing rendering pipeline with custom GLSL fragment shaders, featuring dynamic underwater/lava distortion effects using UV coordinate manipulation and real-time crosshair overlay rendering}
+          \resumeItem{Developed dual physics simulation system: gravity-based collision detection with terrain for ground movement, and buoyancy calculations for water/lava interaction, plus creative fly-mode with 6-DOF movement}
+          \resumeItem{Built efficient chunk-based world management system with frustum culling and LOD optimization, reducing draw calls by 80\% through face culling of adjacent blocks}
+          \resumeItem{Implemented real-time block manipulation (mining/placing) with ray-casting intersection testing and immediate mesh updates, supporting 16 different block types with unique textures and properties}
+          \resumeItem{Project demo showcasing all features: \url{https://youtu.be/jRb4EHV5KQI}}
+          \resumeItemListEnd
           
     \resumeSubHeadingListEnd
 
