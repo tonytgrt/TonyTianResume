@@ -152,6 +152,15 @@
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, Shell, Kernel}}{Mar 2025 -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Architected and implemented a complete user-level operating system in C with team of 4, featuring 8000+ lines of systems code with full process lifecycle management}
+        \resumeItem{Designed Process Control Block (PCB) data structure managing 50+ concurrent processes with metadata including PID allocation, priority levels, parent-child relationships, signal handling, and user/kernel stack management}
+        \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
+        \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
+      \resumeItemListEnd
     
     \resumeProjectHeading
       {\textbf{Monte Carlo Path Tracer \& Real-Time PBR Renderer} $|$ \emph{C++, GLSL}}{Jan 2025 -- May 2025}
@@ -161,15 +170,7 @@
       \resumeItem{Engineered custom BRDF models for materials including chrome, plastic, and complex surface properties}
       \resumeItem{Rendering demo reel: \url{https://github.com/tonytgrt/TonyTianRenderDemo}}
     \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, Make, GDB}}{Mar 2025 -- May 2025}
-      \resumeItemListStart
-        \resumeItem{Architected and implemented a complete user-level operating system in C with team of 4, featuring 8000+ lines of systems code with full process lifecycle management}
-        \resumeItem{Designed Process Control Block (PCB) data structure managing 50+ concurrent processes with metadata including PID allocation, priority levels, parent-child relationships, signal handling, and user/kernel stack management}
-        \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
-        \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
-      \resumeItemListEnd
+ 
           
     \resumeProjectHeading
       {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, OpenGL, Qt}}{Oct 2024 -- Dec 2024}
