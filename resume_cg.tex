@@ -119,62 +119,64 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of Pennsylvania - School of Engineering and Applied Sciences}{Philadelphia, PA}
-      {B.S.E. in Computer Engineering, M.S.E. in Computer Graphics and Game Technology}{May 2027}
+      {B.S.E. in Computer Engineering, Accelerated M.S.E. in Computer Graphics and Game Technology}{May 2027}
       \resumeItemListStart
-        \resumeItem{GPA: 3.74 | Relevant Courses: GPU Programming, Advanced Rendering, Interactive Computer Graphics, Real-Time Rendering, Game Engine Programming, Data Structures \& Algorithms, Operating Systems}
+        \resumeItem{GPA: 3.74 | Relevant Courses: GPU Programming, Advanced Rendering, Interactive Computer Graphics, Computer Animation, Operating Systems, Data Structures \& Algorithms, Computer Architecture}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
+
+  %-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{CUDA Path Tracer} $|$ \emph{CUDA, C++}}{Sep 2025}
+  \resumeItemListStart
+  \resumeItem{Monte Carlo path tracer capable of rendering complex 3D scenes with custom OBJ models and environment maps}
+  \resumeItem{Implemented shading BSDF kernel supporting global illumination, multiple importance sampling, anti-aliasing, depth of field, sub-surface scattering and various material types including diffuse, specular, and refractive surfaces}
+  \resumeItem{Designed efficient stream compaction kernel to remove terminated rays, improving performance by 30\% for highly complex scenes. A standalone project with detailed performance analysis is available here: \href{https://github.com/tonytgrt/Project2-Stream-Compaction}{\underline{Github Link}}}
+  \resumeItem{Utilized NSight Compute and NSight Graphics for performance profiling and optimization}
+  \resumeItem{Project Repo and Demo link: \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{\underline{CUDA-Path-Tracer}}. A previous GLSL path tracer project demo: \href{https://github.com/tonytgrt/TonyTianRenderDemo}{\underline{Render-Demo}}}
+\resumeItemListEnd
+      
+\resumeProjectHeading
+      {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, OpenGL, Qt, GLSL}}{Oct 2024 -- Dec 2024}
+      \resumeItemListStart
+      \resumeItem{Collaborated in team of 3 to develop fully-featured voxel game engine in C++ using OpenGL, generating infinite worlds with 1M+ blocks and maintaining 60+ FPS performance}
+      \resumeItem{Engineered procedural terrain generation system using layered 2D/3D Perlin noise algorithms, creating 5 distinct biomes (Grassland, Mountain, Desert, Islands, Caves) with biome-specific block distributions and procedurally placed vegetation assets}
+      \resumeItem{Implemented post-processing rendering pipeline with custom GLSL fragment shaders, featuring dynamic underwater/lava distortion effects using UV coordinate manipulation and real-time crosshair overlay rendering}
+      \resumeItem{Developed dual physics simulation system: gravity-based collision detection with terrain for ground movement, and buoyancy calculations for water/lava interaction, plus creative fly-mode with 6-DOF movement}
+      \resumeItem{Built efficient chunk-based world management system with frustum culling and LOD optimization, reducing draw calls by 80\% through face culling of adjacent blocks}
+      \resumeItem{Implemented real-time block manipulation (mining/placing) with ray-casting intersection testing and immediate mesh updates, supporting 16 different block types with unique textures and properties}
+      \resumeItem{Project demo showcasing all features: \href{https://youtu.be/jRb4EHV5KQI}{\underline{Game-Demo}}}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+      {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, Shell, Kernel}}{Mar 2025 -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Architected and implemented a complete user-level operating system in C with team of 4, featuring 8000+ lines of systems code with full process lifecycle management}
+        \resumeItem{Designed Process Control Block (PCB) data structure managing 50+ concurrent processes with metadata including PID allocation, priority levels, parent-child relationships, signal handling, and user/kernel stack management}
+        \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
+        \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
+      \resumeItemListEnd
+      
+\resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Product Development Researcher \& UX Designer}{Jan 2025 -- May 2025}
-      {YesTech Corporation - Best Friends Network Social Platform}{Remote}
+      {Linux Kernel Policies Research Assistant - PURM Scholar}{May 2025 -- Aug 2025}
+      {Learning Directed Operating System (\href{https://ldos.utexas.edu/}{\underline{LDOS}}), Prof. Sebastian Angel}{Philadelphia, PA}
       \resumeItemListStart
-        \resumeItem{Led user-centric product development for social media application with AR-inspired features targeting Gen-Z demographic with 10,000+ beta users, focusing on creative content tools}
-        \resumeItem{Designed "Friendship Portal" interactive feature enabling real-time visual mood sharing between users, implementing UI/UX principles that drove 40\% increase in user engagement}
-        \resumeItem{Conducted A/B testing across 500+ users for visual effects and interaction patterns, iterating on design based on user feedback to optimize creative expression features}
-        \resumeItem{Collaborated with mobile development team to implement intuitive creator tools, reducing content creation time by 35\% through streamlined workflows}
+        \resumeItem{Developed eBPF-based kernel monitoring infrastructure collecting real-time TCP networking metrics retrieved from 5 crucial kernel tcp functions of tcp\_v4\_rcv, v4\_connect, state\_process, congestion\_control, and cubic}
+        \resumeItem{Engineered high-performance data analysis pipeline processing 10,000+ TCP state transitions per second, identifying critical performance bottlenecks in kernel networking policies and congestion control algorithms}
+        \resumeItem{Architected and contributed 2000+ lines of C and Python code to open-source \href{https://github.com/tonytgrt/KernMLOps/tree/main}{\underline{KernMLOps repository}}, implementing kernel probing infrastructure used by 15+ researchers}
       \resumeItemListEnd
 
-    \resumeSubheading
-      {Beta Test Engineer \& QA Analyst}{Dec 2022 -- Oct 2023}
-      {miHoYo - Genshin Impact (AAA Mobile Gaming)}{Remote}
-      \resumeItemListStart
-        \resumeItem{Selected as exclusive beta tester for Genshin Impact, a \$4B+ revenue game with 60M+ MAU featuring extensive visual effects and real-time rendering systems}
-        \resumeItem{Tested 10+ character releases with unique particle effects, shaders, and animations, ensuring visual quality and performance optimization across iOS/Android platforms}
-        \resumeItem{Evaluated open-world rendering performance including LOD systems, texture streaming, and post-processing effects, identifying optimization opportunities for mobile GPUs}
-        \resumeItem{Provided detailed feedback on visual effects, animation systems, and UI/UX design that influenced character designs generating \$10M+ revenue}
-      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------
-\section{Projects}
-    \resumeSubHeadingListStart
-    
-    \resumeProjectHeading
-      {\textbf{Monte Carlo Path Tracer \& Real-Time PBR Renderer} $|$ \emph{C++, GLSL}}{Jan 2025 -- May 2025}
-      \resumeItemListStart
-      \resumeItem{Implemented Monte Carlo path tracer supporting Cornell Box, glass refraction, microfacet materials, and environment mapping}
-      \resumeItem{Developed physically-based rendering (PBR) shader pipeline with albedo/metallic/roughness maps achieving real-time ray tracing on modern GPUs with 60+ FPS real-time performance}
-      \resumeItem{Engineered custom BRDF models for materials including chrome, plastic, and complex surface properties}
-      \resumeItem{Demo: \url{https://github.com/tonytgrt/TonyTianRenderDemo}}
-    \resumeItemListEnd
-          
-    \resumeProjectHeading
-          {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, OpenGL, Qt, GLSL}}{Oct 2024 -- Dec 2024}
-          \resumeItemListStart
-          \resumeItem{Collaborated in team of 3 to develop fully-featured voxel game engine in C++ using OpenGL, generating infinite worlds with 1M+ blocks and maintaining 60+ FPS performance}
-          \resumeItem{Engineered procedural terrain generation system using layered 2D/3D Perlin noise algorithms, creating 5 distinct biomes (Grassland, Mountain, Desert, Islands, Caves) with biome-specific block distributions and procedurally placed vegetation assets}
-          \resumeItem{Implemented post-processing rendering pipeline with custom GLSL fragment shaders, featuring dynamic underwater/lava distortion effects using UV coordinate manipulation and real-time crosshair overlay rendering}
-          \resumeItem{Developed dual physics simulation system: gravity-based collision detection with terrain for ground movement, and buoyancy calculations for water/lava interaction, plus creative fly-mode with 6-DOF movement}
-          \resumeItem{Built efficient chunk-based world management system with frustum culling and LOD optimization, reducing draw calls by 80\% through face culling of adjacent blocks}
-          \resumeItem{Implemented real-time block manipulation (mining/placing) with ray-casting intersection testing and immediate mesh updates, supporting 16 different block types with unique textures and properties}
-          \resumeItem{Project demo showcasing all features: \url{https://youtu.be/jRb4EHV5KQI}}
-          \resumeItemListEnd
-          
-    \resumeSubHeadingListEnd
+
 
 \enlargethispage{20pt}
 
@@ -182,10 +184,9 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-    \textbf{Graphics/Rendering}{: OpenGL, WebGL, GLSL/HLSL shaders, Real-time rendering, Ray tracing, PBR} \\
-    \textbf{Game Dev/3D}{: Path Tracing, Deferred Rendering, Rasterization, Animation systems, Post-processing} \\
-    \textbf{Programming}{: C/C++ (advanced), Python, CUDA, Multi-threading, Memory management} \\
-    \textbf{Tools/Platforms}{: Git, Qt, Visual Studio, Cross-platform development (Windows, macOS, iOS, Android)}
+    \textbf{Graphics/Rendering}{: NSight Profiling, Path Tracing, Deferred Rendering, Rasterization, Animation systems, PBR} \\
+    \textbf{Programming}{: CUDA, C/C++, GLSL, Parallel algorithms, Memory management, Rendering pipeline} \\
+    \textbf{Tools/Platforms}{: Nvidia NSight, Visual Studio, Qt, OpenGL, DirectX, Git, CMake, Linux, Windows, MacOS}
     }}
  \end{itemize}
 
