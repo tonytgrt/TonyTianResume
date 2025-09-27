@@ -125,6 +125,41 @@
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, Shell, Kernel}}{Mar 2025 -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Architected and implemented a complete user-level operating system in C with team of 4, featuring 8000+ lines of systems code with full process lifecycle management}
+        \resumeItem{Designed Process Control Block (PCB) data structure managing 50+ concurrent processes with metadata including PID allocation, priority levels, parent-child relationships, signal handling, and user/kernel stack management}
+        \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
+        \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
+      \resumeItemListEnd
+    
+      \resumeProjectHeading
+      {\textbf{CUDA Path Tracer} $|$ \emph{CUDA, C++}}{Sep 2025}
+      \resumeItemListStart
+      \resumeItem{Monte Carlo path tracer capable of rendering complex 3D scenes with custom 3D models and environment maps}
+      \resumeItem{Implemented shading BSDF kernel supporting global illumination, multiple importance sampling, anti-aliasing, depth of field, sub-surface scattering and various material types including diffuse, specular, and refractive surfaces}
+      \resumeItem{Designed efficient stream compaction kernel to remove terminated rays, improving performance by 30\% for highly complex scenes. A standalone project with detailed performance analysis is available here: \href{https://github.com/tonytgrt/Project2-Stream-Compaction}{\underline{Github Link}}}
+      \resumeItem{Utilized NSight Compute and NSight Graphics for performance profiling and optimization}
+      \resumeItem{Project Repo and Demo link: \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{\underline{CUDA-Path-Tracer}}. A previous GLSL path tracer project demo: \href{https://github.com/tonytgrt/TonyTianRenderDemo}{\underline{Render-Demo}}}
+    \resumeItemListEnd
+ 
+          
+    \resumeProjectHeading
+      {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, OpenGL, Qt}}{Oct 2024 -- Dec 2024}
+      \resumeItemListStart
+        \resumeItem{Collaborated in team of 3 to develop fully-featured voxel game engine in C++ using OpenGL in Qt}
+          \resumeItem{Engineered procedural terrain generation system using layered 2D/3D Perlin noise algorithms, creating 5 distinct biomes (Grassland, Mountain, Desert, Islands, Caves) with biome-specific block distributions and procedurally placed vegetation assets}
+          \resumeItem{Developed dual physics simulation system: gravity-based collision detection with terrain for ground movement, and buoyancy calculations for water/lava interaction, plus creative fly-mode with 6-DOF movement}
+          \resumeItem{Project demo showcasing all features: \href{https://youtu.be/jRb4EHV5KQI}{\underline{Game-Demo}}}
+      \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
@@ -149,39 +184,6 @@
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------
-\section{Projects}
-    \resumeSubHeadingListStart
-
-    \resumeProjectHeading
-      {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, Shell, Kernel}}{Mar 2025 -- May 2025}
-      \resumeItemListStart
-        \resumeItem{Architected and implemented a complete user-level operating system in C with team of 4, featuring 8000+ lines of systems code with full process lifecycle management}
-        \resumeItem{Designed Process Control Block (PCB) data structure managing 50+ concurrent processes with metadata including PID allocation, priority levels, parent-child relationships, signal handling, and user/kernel stack management}
-        \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
-        \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
-      \resumeItemListEnd
-    
-    \resumeProjectHeading
-      {\textbf{Monte Carlo Path Tracer \& Real-Time PBR Renderer} $|$ \emph{C++, GLSL}}{Jan 2025 -- May 2025}
-      \resumeItemListStart
-      \resumeItem{Implemented Monte Carlo path tracer supporting Cornell Box, glass refraction, microfacet materials, and environment mapping with direct light sampling and multiple importance sampling shaders}
-      \resumeItem{Developed physically-based rendering (PBR) shader pipeline with albedo/metallic/roughness maps achieving real-time ray tracing on modern GPUs with 60+ FPS real-time performance}
-      \resumeItem{Engineered custom BRDF models for materials including chrome, plastic, and complex surface properties}
-      \resumeItem{Rendering demo reel: \url{https://github.com/tonytgrt/TonyTianRenderDemo}}
-    \resumeItemListEnd
- 
-          
-    \resumeProjectHeading
-      {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, OpenGL, Qt}}{Oct 2024 -- Dec 2024}
-      \resumeItemListStart
-        \resumeItem{Collaborated in team of 3 to develop fully-featured voxel game engine in C++ using OpenGL in Qt}
-          \resumeItem{Engineered procedural terrain generation system using layered 2D/3D Perlin noise algorithms, creating 5 distinct biomes (Grassland, Mountain, Desert, Islands, Caves) with biome-specific block distributions and procedurally placed vegetation assets}
-          \resumeItem{Developed dual physics simulation system: gravity-based collision detection with terrain for ground movement, and buoyancy calculations for water/lava interaction, plus creative fly-mode with 6-DOF movement}
-          \resumeItem{Project demo showcasing all features: \url{https://youtu.be/jRb4EHV5KQI}}
-      \resumeItemListEnd
-          
-    \resumeSubHeadingListEnd
 
 \enlargethispage{20pt}
 
@@ -191,10 +193,9 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-    \textbf{Programming Languages}{: C/C++, CUDA, GLSL, Python, Java, eBPF, Assembly, JavaScript, LATEX} \\
-    \textbf{Graphics \& Rendering}{: OpenGL, DirectX, Real-time Ray Tracing, Path Tracing, PBR, Procedural Generation} \\
-    \textbf{Systems \& Tools}{: Linux Kernel Development, Docker, Qt, Git, CMake, Embedded Systems, TCP/IP} \\
-    \textbf{Frameworks \& APIs}{: Qt, Raspberry Pi, ATMega, VMware, CloudLab, Jupyter Notebook}
+    \textbf{Programming}{: CUDA, C/C++, GLSL, Parallel algorithms, Memory management, Rendering pipeline} \\
+    \textbf{Graphics/Rendering}{: NSight Profiling, Path Tracing, Deferred Rendering, Rasterization, Animation systems, PBR} \\
+    \textbf{Tools/APIs}{: Nvidia NSight, Visual Studio, Qt, OpenGL, WebGPU, Git, CMake, MakeFile, Clang, GDB, GCC}
     }}
  \end{itemize}
 
