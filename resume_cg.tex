@@ -18,6 +18,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage[normalem]{ulem}
 \input{glyphtounicode}
 
 
@@ -64,6 +65,9 @@
 
 %-------------------------
 % Custom commands
+% Adjust underline depth to be closer to text
+\renewcommand{\ULdepth}{2.5pt}
+
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-3pt}}
@@ -110,7 +114,7 @@
 %----------HEADING----------
 \begin{center}
     \textbf{\Huge \scshape Tony Yiding Tian} \\ \vspace{1pt}
-    \small Philadelphia, PA $|$ (267)249-1202 $|$ \href{mailto:tonytg@seas.upenn.edu}{\underline{tonytg@seas.upenn.edu}} $|$ 
+    \small Philadelphia, PA $|$ (267)249-1202 $|$ \href{mailto:tonytg@seas.upenn.edu}{\underline{tonytg@seas.upenn.edu}} $|$
     \href{https://tonyxtian.com}{\underline{tonyxtian.com}}
 \end{center}
 
@@ -135,9 +139,20 @@
   \resumeItem{Monte Carlo path tracer capable of rendering complex 3D scenes with custom 3D models and environment maps}
   \resumeItem{Implemented shading BSDF kernel supporting global illumination, multiple importance sampling, anti-aliasing, sub-surface scattering, capable of rendering various PBR material types with albedo and texture maps}
   \resumeItem{Integrated third-party libraries of tinyGLTF to support glTF 2.0 mesh loading and Nvidia OptiX for denoising}
-  \resumeItem{Utilized various techniques to boost performance: material sorting (+5\%), Russian Roulette (+6\% - 24\%), stream compaction (+24\% - 67\%), and Bounding Volume Hierachy (3$\times$ - $160\times$ framerate in complex scenes). }
-  \resumeItem{Project Repo and Demo: \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{github.com/tonytgrt/CUDA-Path-Tracer}. A previous standalone performance focused stream compaction project with detailed analysis in Nsight: \href{https://github.com/tonytgrt/Project2-Stream-Compaction}{github.com/tonytgrt/Project2-Stream-Compaction}.}
+  \resumeItem{Utilized various techniques to boost performance: material sorting (+5\%), Russian Roulette (+6\% - 24\%), stream compaction (+24\% - 67\%), and Bounding Volume Hierachy (3$\times$ - $160\times$ framerate in complex scenes) }
+  \resumeItem{Project Repo and Demo: \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{\uline{github.com/tonytgrt/CUDA-Path-Tracer}}. A previous standalone performance focused stream compaction project with detailed analysis in Nsight: \href{https://github.com/tonytgrt/Project2-Stream-Compaction}{\uline{github.com/tonytgrt/Project2-Stream-Compaction}}}
 \resumeItemListEnd
+
+\resumeProjectHeading
+      {\textbf{WebGPU Renderer} $|$ \emph{WebGPU, TypeScript, WGSL}}{Sep 2025 -- Oct 2025}
+      \resumeItemListStart
+      \resumeItem{Implemented three advanced rendering techniques for real-time lighting of 5000+ dynamic point lights: Naive Forward, Forward+, and Clustered Deferred rendering using WebGPU compute and graphics pipelines}
+      \resumeItem{Engineered screen-space light clustering system using compute shaders, subdividing view frustum into 16×9×24 grid with exponential depth slicing and sphere-AABB intersection testing for efficient light culling}
+      \resumeItem{Developed G-buffer architecture with 3 render targets (position, normal, albedo) enabling two-pass deferred rendering that decouples geometry complexity from lighting calculations}
+      \resumeItem{Achieved 53x performance improvement over naive rendering (497ms to 9.3ms at 5000 lights) and 3.5x speedup vs Forward+ through overdraw elimination and optimized memory access patterns}
+      \resumeItem{Built automated performance testing system collecting statistical frame time data across 30 configurations (3 renderers × 10 light counts), generating CSV analysis for rigorous benchmarking}
+      \resumeItem{Live demo deployed at \href{http://webgpu.tonyxtian.com}{\uline{webgpu.tonyxtian.com}}, rendering Sponza scene with real-time performance metrics and interactive controls. GitHub repo: \href{https://github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}{\uline{github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}}}
+      \resumeItemListEnd
       
 \resumeProjectHeading
       {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, GLSL, Qt}}{Oct 2024 -- Dec 2024}
@@ -146,19 +161,10 @@
       \resumeItem{Engineered procedural terrain generation system using layered 2D/3D Perlin noise algorithms, creating 5 distinct biomes (Grassland, Mountain, Desert, Islands, Caves) with biome-specific block distributions and procedurally placed vegetation assets}
       \resumeItem{Implemented post-processing rendering pipeline with custom GLSL fragment shaders, featuring dynamic underwater/lava distortion effects using UV coordinate manipulation and real-time crosshair overlay rendering}
       \resumeItem{Developed dual physics simulation system: gravity-based collision detection with terrain for ground movement, and buoyancy calculations for water/lava interaction, plus creative fly-mode with 6-DOF movement}
-      \resumeItem{Built efficient chunk-based world management system with frustum culling and LOD optimization, reducing draw calls by 80\% through face culling of adjacent blocks}
       \resumeItem{Implemented real-time block manipulation (mining/placing) with ray-casting intersection testing and immediate mesh updates, supporting 16 different block types with unique textures and properties}
-      \resumeItem{Project demo showcasing all features: \href{https://youtu.be/jRb4EHV5KQI}{youtu.be/jRb4EHV5KQI}}
+      \resumeItem{Project demo showcasing all features: \href{https://youtu.be/jRb4EHV5KQI}{\uline{youtu.be/jRb4EHV5KQI}}}
       \resumeItemListEnd
 
-      \resumeProjectHeading
-      {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, Shell, Kernel}}{Mar 2025 -- May 2025}
-      \resumeItemListStart
-        \resumeItem{Architected and implemented a complete user-level operating system in C with team of 4, featuring 8000+ lines of systems code with full process lifecycle management}
-        \resumeItem{Designed Process Control Block (PCB) data structure managing 50+ concurrent processes with metadata including PID allocation, priority levels, parent-child relationships, signal handling, and user/kernel stack management}
-        \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
-        \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
-      \resumeItemListEnd
       
 \resumeSubHeadingListEnd
 
@@ -167,11 +173,11 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Linux Kernel Policies Research Assistant - PURM Scholar}{May 2025 -- Aug 2025}
-      {Learning Directed Operating System (\href{https://ldos.utexas.edu/}{\underline{LDOS}}), Prof. Sebastian Angel}{Philadelphia, PA}
+      {Learning Directed Operating System (\href{https://ldos.utexas.edu/}{\uline{LDOS}}), Prof. Sebastian Angel}{Philadelphia, PA}
       \resumeItemListStart
         \resumeItem{Developed eBPF-based kernel monitoring infrastructure collecting real-time TCP networking metrics retrieved from 5 crucial kernel tcp functions of tcp\_v4\_rcv, v4\_connect, state\_process, congestion\_control, and cubic}
         \resumeItem{Engineered high-performance data analysis pipeline processing 10,000+ TCP state transitions per second, identifying critical performance bottlenecks in kernel networking policies and congestion control algorithms}
-        \resumeItem{Architected and contributed 2000+ lines of C and Python code to open-source KernMLOps repo, implementing kernel probing infrastructure used by 15+ researchers. Repo link: \href{https://github.com/tonytgrt/KernMLOps}{github.com/tonytgrt/KernMLOps}}
+        \resumeItem{Architected and contributed 2000+ lines of C and Python code to open-source KernMLOps repo, implementing kernel probing infrastructure used by 15+ researchers. GitHub Repo: \href{https://github.com/tonytgrt/KernMLOps}{\uline{github.com/tonytgrt/KernMLOps}}}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -185,8 +191,8 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
     \textbf{Graphics/Rendering}{: NSight Profiling, Path Tracing, Deferred Rendering, Rasterization, Animation systems, PBR} \\
-    \textbf{Programming}{: CUDA, C/C++, GLSL, Parallel algorithms, Memory management, Rendering pipeline} \\
-    \textbf{Tools/APIs}{: Nvidia NSight, Visual Studio, Qt, OpenGL, WebGPU, Git, CMake, MakeFile, Clang, GDB, GCC}
+    \textbf{Programming}{: CUDA, C/C++, WGSL, GLSL, Parallel algorithms, Memory management, Rendering pipeline} \\
+    \textbf{Tools/APIs}{: Nvidia NSight, WebGPU, Vulkan, Visual Studio, Qt, OpenGL, Git, CMake, MakeFile, Clang, GDB}
     }}
  \end{itemize}
 

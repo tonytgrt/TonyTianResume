@@ -130,6 +130,16 @@
     \resumeSubHeadingListStart
 
     \resumeProjectHeading
+        {\textbf{CUDA Path Tracer} $|$ \emph{CUDA, C++}}{Sep 2025 - Oct 2025}
+        \resumeItemListStart
+        \resumeItem{Monte Carlo path tracer capable of rendering complex 3D scenes with custom 3D models and environment maps}
+        \resumeItem{Implemented shading BSDF kernel supporting global illumination, multiple importance sampling, anti-aliasing, sub-surface scattering, capable of rendering various PBR material types with albedo and texture maps}
+        \resumeItem{Integrated third-party libraries of tinyGLTF to support glTF 2.0 mesh loading and Nvidia OptiX for denoising}
+        \resumeItem{Utilized various techniques to boost performance: material sorting (+5\%), Russian Roulette (+6\% - 24\%), stream compaction (+24\% - 67\%), and Bounding Volume Hierachy (3$\times$ - $160\times$ framerate in complex scenes). }
+        \resumeItem{Project Repo and Demo: \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{github.com/tonytgrt/CUDA-Path-Tracer}. A previous standalone performance focused stream compaction project with detailed analysis in Nsight: \href{https://github.com/tonytgrt/Project2-Stream-Compaction}{github.com/tonytgrt/Project2-Stream-Compaction}.}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
       {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, Shell, Kernel}}{Mar 2025 -- May 2025}
       \resumeItemListStart
         \resumeItem{Architected and implemented a complete user-level operating system in C with team of 4, featuring 8000+ lines of systems code with full process lifecycle management}
@@ -137,18 +147,7 @@
         \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
         \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
       \resumeItemListEnd
-    
-      \resumeProjectHeading
-      {\textbf{CUDA Path Tracer} $|$ \emph{CUDA, C++}}{Sep 2025}
-      \resumeItemListStart
-      \resumeItem{Monte Carlo path tracer capable of rendering complex 3D scenes with custom 3D models and environment maps}
-      \resumeItem{Implemented shading BSDF kernel supporting global illumination, multiple importance sampling, anti-aliasing, depth of field, sub-surface scattering and various material types including diffuse, specular, and refractive surfaces}
-      \resumeItem{Designed efficient stream compaction kernel to remove terminated rays, improving performance by 30\% for highly complex scenes. A standalone project with detailed performance analysis is available here: \href{https://github.com/tonytgrt/Project2-Stream-Compaction}{\underline{Github Link}}}
-      \resumeItem{Utilized NSight Compute and NSight Graphics for performance profiling and optimization}
-      \resumeItem{Project Repo and Demo link: \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{\underline{CUDA-Path-Tracer}}. A previous GLSL path tracer project demo: \href{https://github.com/tonytgrt/TonyTianRenderDemo}{\underline{Render-Demo}}}
-    \resumeItemListEnd
- 
-          
+   
     \resumeProjectHeading
       {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, OpenGL, Qt}}{Oct 2024 -- Dec 2024}
       \resumeItemListStart
@@ -180,8 +179,7 @@
         \resumeItem{Selected as exclusive beta tester for Genshin Impact, a \$4B+ revenue mobile game with 60M+ monthly active users, participating in pre-release testing cycles every 6 weeks}
         \resumeItem{Conducted comprehensive quality assurance testing for 10+ character releases, each generating \$1M+ in revenue, ensuring gameplay balance and identifying critical performance issues before public launch}
         \resumeItem{Performed systematic testing of open-world gameplay mechanics including combat systems, puzzle design, and performance optimization across multiple mobile platforms (iOS, Windows)}
-        \resumeItem{Provided detailed feedback on character design, combat mechanics, and user experience, influencing design decisions for characters with combined revenue exceeding \$10M}
-      \resumeItemListEnd
+        \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 
