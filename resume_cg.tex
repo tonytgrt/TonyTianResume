@@ -125,7 +125,7 @@
       {University of Pennsylvania - School of Engineering and Applied Sciences}{Philadelphia, PA}
       {B.S.E. in Computer Engineering, Accelerated M.S.E. in Computer Graphics and Game Technology}{May 2027}
       \resumeItemListStart
-        \resumeItem{GPA: 3.74 | Relevant Courses: GPU Programming, Advanced Rendering, Interactive Computer Graphics, Computer Animation, Operating Systems, Data Structures \& Algorithms, Computer Architecture}
+        \resumeItem{GPA: 3.8 | Relevant Courses: GPU Programming, Advanced Rendering, Interactive Computer Graphics, Computer Animation, Operating Systems, Data Structures \& Algorithms, Computer Architecture}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -134,7 +134,28 @@
 \resumeSubHeadingListStart
 
 \resumeProjectHeading
-  {\textbf{CUDA Path Tracer} $|$ \emph{CUDA, C++}}{Sep 2025 - Oct 2025}
+      {\textbf{MatForge - Advanced Material Rendering System} $|$ \emph{Vulkan, Slang, C++}}{Nov 2025 -- Dec 2025}
+      \resumeItemListStart
+      \resumeItem{Architected production-quality GPU path tracer implementing four SIGGRAPH papers (2023-2024) in unified Vulkan ray tracing pipeline, contributing 2,400+ lines of C++ and Slang code for sampling and geometry systems}
+      \resumeItem{Implemented Quad-Optimized Low-Discrepancy Sequences (QOLDS) from SIGGRAPH 2024, engineering base-3 Sobol' generator with Owen scrambling across 47 dimensions, achieving +2.57 dB PSNR and 44.7\% MSE reduction vs PCG sampling at 512 SPP with $<1\%$ performance overhead}
+      \resumeItem{Developed RMIP (Rectangular MinMax Image Pyramid) intersection shader , enabling tessellation-free displacement mapping through hierarchical texture-space ray traversal with custom Vulkan intersection shaders}
+      \resumeItem{Integrated techniques into complete Monte Carlo path tracing pipeline supporting glTF 2.0 scenes, HDR environment maps, and KHR\_materials\_displacement extension for physically-based rendering}
+      \resumeItem{GitHub Repo: \href{https://github.com/MatForge/MatForge}{\uline{github.com/MatForge/MatForge}}}
+      \resumeItemListEnd
+
+\resumeProjectHeading
+      {\textbf{Vulkan Grass Renderer} $|$ \emph{Vulkan, GLSL, C++}}{Oct 2025 -- Nov 2025}
+      \resumeItemListStart
+      \resumeItem{Implemented real-time grass rendering system in Vulkan, simulating up to 1 million grass blades with physics-based animation at interactive frame rates using compute and tessellation pipelines}
+      \resumeItem{Developed GPU compute shader for physics simulation applying gravity, Hooke's law recovery forces, and wind with spatial turbulence to quadratic Bezier curve grass blades, processing 1M+ blade state updates per frame}
+      \resumeItem{Engineered three-tiered GPU culling system (orientation, view-frustum, distance-based probabilistic) achieving 4.31$\times$ performance improvement at 1M blades through efficient atomic operations and indirect draw calls}
+      \resumeItem{Built hardware tessellation pipeline with dynamic LOD based on camera distance, generating smooth blade geometry with exponential falloff from 10 to 2 subdivisions for optimal geometry density}
+      \resumeItem{Created comprehensive ImGui control panel with real-time FPS metrics (average, 1\% lows), frame time graphs, and automated performance testing system generating CSV benchmarks across 40 configurations}
+      \resumeItem{GitHub Repo: \href{https://github.com/tonytgrt/Vulkan-Grass-Renderer}{\uline{github.com/tonytgrt/Vulkan-Grass-Renderer}}}
+      \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{CUDA Path Tracer} $|$ \emph{CUDA, GLSL, C++}}{Sep 2025 - Oct 2025}
   \resumeItemListStart
   \resumeItem{Monte Carlo path tracer capable of rendering complex 3D scenes with custom 3D models and environment maps}
   \resumeItem{Implemented shading BSDF kernel supporting global illumination, multiple importance sampling, anti-aliasing, sub-surface scattering, capable of rendering various PBR material types with albedo and texture maps}
@@ -153,34 +174,11 @@
       \resumeItem{Built automated performance testing system collecting statistical frame time data across 30 configurations (3 renderers × 10 light counts), generating CSV analysis for rigorous benchmarking}
       \resumeItem{Live demo deployed at \href{http://webgpu.tonyxtian.com}{\uline{webgpu.tonyxtian.com}}, rendering Sponza scene with real-time performance metrics and interactive controls. GitHub repo: \href{https://github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}{\uline{github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}}}
       \resumeItemListEnd
-      
-\resumeProjectHeading
-      {\textbf{Mini Minecraft - Voxel-based 3D Game} $|$ \emph{C++, GLSL, Qt}}{Oct 2024 -- Dec 2024}
-      \resumeItemListStart
-      \resumeItem{Collaborated in team of 3 to develop fully-featured voxel game engine in C++ using OpenGL, generating infinite worlds with 1M+ blocks and maintaining 60+ FPS performance}
-      \resumeItem{Engineered procedural terrain generation system using layered 2D/3D Perlin noise algorithms, creating 5 distinct biomes (Grassland, Mountain, Desert, Islands, Caves) with biome-specific block distributions and procedurally placed vegetation assets}
-      \resumeItem{Implemented post-processing rendering pipeline with custom GLSL fragment shaders, featuring dynamic underwater/lava distortion effects using UV coordinate manipulation and real-time crosshair overlay rendering}
-      \resumeItem{Developed dual physics simulation system: gravity-based collision detection with terrain for ground movement, and buoyancy calculations for water/lava interaction, plus creative fly-mode with 6-DOF movement}
-      \resumeItem{Implemented real-time block manipulation (mining/placing) with ray-casting intersection testing and immediate mesh updates, supporting 16 different block types with unique textures and properties}
-      \resumeItem{Project demo showcasing all features: \href{https://youtu.be/jRb4EHV5KQI}{\uline{youtu.be/jRb4EHV5KQI}}}
-      \resumeItemListEnd
+    
 
       
 \resumeSubHeadingListEnd
 
-%-----------EXPERIENCE-----------
-\section{Experience}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Linux Kernel Policies Research Assistant - PURM Scholar}{May 2025 -- Aug 2025}
-      {Learning Directed Operating System (\href{https://ldos.utexas.edu/}{\uline{LDOS}}), Prof. Sebastian Angel}{Philadelphia, PA}
-      \resumeItemListStart
-        \resumeItem{Developed eBPF-based kernel monitoring infrastructure collecting real-time TCP networking metrics retrieved from 5 crucial kernel tcp functions of tcp\_v4\_rcv, v4\_connect, state\_process, congestion\_control, and cubic}
-        \resumeItem{Engineered high-performance data analysis pipeline processing 10,000+ TCP state transitions per second, identifying critical performance bottlenecks in kernel networking policies and congestion control algorithms}
-        \resumeItem{Architected and contributed 2000+ lines of C and Python code to open-source KernMLOps repo, implementing kernel probing infrastructure used by 15+ researchers. GitHub Repo: \href{https://github.com/tonytgrt/KernMLOps}{\uline{github.com/tonytgrt/KernMLOps}}}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
 
 
 
@@ -190,8 +188,8 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
+    \textbf{Programming}{: C++, CUDA, Python, WGSL, GLSL, Parallel algorithms, Memory management, Rendering pipeline} \\
     \textbf{Graphics/Rendering}{: NSight Profiling, Path Tracing, Deferred Rendering, Rasterization, Animation systems, PBR} \\
-    \textbf{Programming}{: CUDA, C/C++, WGSL, GLSL, Parallel algorithms, Memory management, Rendering pipeline} \\
     \textbf{Tools/APIs}{: Nvidia NSight, WebGPU, Vulkan, Visual Studio, Qt, OpenGL, Git, CMake, MakeFile, Clang, GDB}
     }}
  \end{itemize}

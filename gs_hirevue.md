@@ -1,9 +1,21 @@
 # Goldman Sachs Engineering Analyst - HireVue Prep
 
 **Interview Format:** Non-interactive recorded video | 30 sec think + 60 sec record per question
-**Strategy:** Full scripts for memorization, aim for 60-90 seconds at natural speaking pace (~2.5-3 words/second)
 
-**IMPORTANT:** You are NOT restricted to the resume you submitted in August. Talk about your most recent work and strongest projects. They already have your old resume—use this to update them with your current expertise and emphasize your parallel computing angle.
+**CRITICAL INSIGHT FROM RACHEL:**
+
+- **Reviewers judge you in the first 2 sentences** - they lose patience quickly
+- **Structure: ANSWER FIRST, then explain** - Not build-up to conclusion
+- **For "Why GS": Talk about culture/people, not just technical challenges**
+- **Sound natural and conversational**
+
+**STRATEGY:**
+
+- Memorize shortened scripts (45-70 sec base for non-native speaking pace)
+- Put your strongest point in the first sentence
+- You are NOT restricted to your August resume—talk about current work
+- Emphasize parallel computing angle throughout
+- **Optional sentences in [brackets]**: Include these ONLY if question allows 90 seconds instead of 60 seconds. They add technical depth but aren't required for core answer.
 
 **KEY DIFFERENTIATOR:** Parallel computing & GPU programming expertise applies directly to financial systems (risk calculations, Monte Carlo simulations, high-frequency trading acceleration, real-time market data processing)
 
@@ -54,203 +66,202 @@
 
 ---
 
-## 1. WALK ME THROUGH YOUR RESUME (60 seconds)
+## 1. WALK ME THROUGH YOUR RESUME (60-90 seconds)
 
-**SCRIPT (170 words, ~60 seconds):**
+**SCRIPT (115 words base = ~60 sec | +45 words optional = ~80 sec):**
 
-"I'm Tony Tian, a junior at Penn studying Computer Engineering, pursuing an accelerated master's in Computer Graphics and Game Technology. Although that might sound unusual for finance, my expertise is really in parallel computing and high-performance systems—which directly applies to Goldman Sachs' infrastructure.
+"I'm Tony Tian, a junior at Penn specializing in parallel computing and high-performance systems. [I'm also pursuing an accelerated master's in Computer Graphics and Game Technology, which gives me deep expertise in GPU architecture and rendering pipelines.] My expertise directly applies to Goldman Sachs' trading and risk infrastructure.
 
-I specialize in three areas. First, GPU programming and parallel algorithms. I've built Monte-carlo path tracers achieving 160 times performance improvements with parallel computing algorithms like stream compaction and bounding volume hierachy. These are same techniques that can be used to power risk calculations and trading systems.
+I've achieved massive performance improvements through GPU programming, such as 160 times speedup on CUDA path tracers using parallel algorithms like stream compaction. These same methods power financial risk calculations and Monte Carlo simulations.
 
-Second, low-latency systems optimization. As a PURM Scholar, I built eBPF kernel monitoring processing 10,000 events per second, improving network throughput by 25%. That microsecond-level optimization mindset applies directly to trading infrastructure.
+I also optimize low-latency systems. As a PURM Scholar, I built eBPF tools which monitors 10,000 Linux kernel events per second, improving network throughput by 25%. That microsecond-level mindset applies to trading infrastructure.
 
-Third, I understand business impact. I tested features for Genshin Impact, a $4 billion platform with 60 million users, influencing $10 million in revenue.
+I understand business impact as well. I tested features for Genshin Impact, a $4 billion platform with 60 million users. [I contributed to quality assurance for features generating over $10 million in revenue.]
 
-I'm excited about Goldman Sachs because you're solving the same performance challenges I love—massively parallel, low-latency systems—but powering global financial markets instead of rendering pixels."
+I'm excited about Goldman Sachs because you solve the same performance challenges I love, but powering global financial markets."
 
 ---
 
-## 2. WHY GOLDMAN SACHS? WHY ENGINEERING? (60 seconds)
+## 2. WHY GOLDMAN SACHS? WHY ENGINEERING? (60-90 seconds)
 
-**SCRIPT (155 words, ~55 seconds):**
+**SCRIPT (110 words base = ~50 sec | +50 words optional = ~75 sec):**
 
-"I'm drawn to Goldman Sachs because you're solving the exact performance challenges I'm passionate about, but at unprecedented scale and impact.
+"I'm drawn to Goldman Sachs because you're solving the hardest engineering problems at unprecedented scale, with real financial impact. The culture of excellence and innovation in your engineering division is exactly where I want to learn and contribute.
 
-What excites me is the intersection of parallel computing and financial engineering. I've specialized in GPU programming—CUDA, WebGPU, parallel algorithms. I've learned that when processing thousands of events per second with microsecond-level latency requirements, you need to think about parallelization, memory access patterns, and hardware architecture.
+What excites me is the direct technical alignment. Your risk calculations run massive parallel computations—same techniques as my GPU work. Your trading systems require microsecond latency—same mindset as my kernel optimization that achieved 25% throughput improvements. Your pricing models use GPU-accelerated Monte Carlo simulations—literally the same algorithms I use for path tracing, just applied to options pricing. [The engineering challenges you face—processing millions of market events per second, optimizing for cache efficiency, building fault-tolerant distributed systems—are exactly the problems I'm passionate about solving.]
 
-Goldman Sachs operates in that same space. Your risk calculations run massive parallel computations. Your trading systems require microsecond latency. Your pricing models use GPU-accelerated Monte Carlo simulations—literally the same algorithms I use for path tracing, just applied to options pricing instead of rendering.
+Plus, I have a connection to Salt Lake City through my friend Rachel, who's inspired me about GS culture and mentorship.
 
-I've also seen how engineering drives business value through my Genshin Impact work on a $4 billion platform. At Goldman Sachs, that connection is even more direct—better trading infrastructure, faster execution systems, more accurate risk models directly impact clients and markets.
-
-This is where the hardest technical problems meet real-world financial impact."
+This is where technical excellence meets real-world impact."
 
 ---
 
 ## 3. TELL ME ABOUT A TIME YOU SOLVED A TOUGH PROBLEM (90 seconds)
 
-**SCRIPT (240 words, ~85 seconds):**
+**SCRIPT (155 words base = ~70 sec | +35 words optional = ~85 sec):**
 
-"My toughest problem was building a CUDA path tracer where complex scenes rendered at 0.6 FPS—completely unusable. The Stanford Dragon model with hundreds of thousands of triangles was taking billions of ray-triangle intersection tests per frame.
+"I achieved a 160x performance improvement on my CUDA path tracer—taking it from 0.6 FPS to 96 FPS. The problem was billions of ray-triangle intersection tests killing performance.
 
-This is similar to financial systems—when processing market data or running risk calculations, you need to optimize both algorithmic complexity and parallel execution.
+My approach: profile first, optimize second. NSight profiling showed 95% of time in ray intersections. I implemented a Bounding Volume Hierarchy with Surface Area Heuristic—a spatial acceleration structure that reduces complexity from O(n) to O(log n).
 
-My approach was systematic. First, I profiled with Nvidia NSight and found 95% of compute time in ray-intersection tests. You can't optimize what you don't measure. Then I researched spatial acceleration structures and decided to implement a Bounding Volume Hierarchy with Surface Area Heuristic for optimal tree construction.
+The challenge was GPU architecture. Traditional recursive tree traversal doesn't work because recursion is expensive on GPUs. So I implemented iterative stackless traversal, plus stream compaction to remove terminated rays, material sorting for memory coherency, and Russian Roulette for early termination. [Each optimization was measured independently in NSight profiler to validate the performance gain before adding the next one.]
 
-The implementation required deep GPU architecture thinking. Traditional recursive tree traversal doesn't work on GPUs because recursion is expensive, so I implemented iterative stackless traversal. I added complementary optimizations: stream compaction to remove terminated rays, material sorting for memory coherency, and Russian Roulette for early path termination.
+Result: 3x to 160x improvement depending on scene complexity. [The Stanford Dragon scene went from completely unusable at 0.6 FPS to real-time interactive at 96 FPS.]
 
-The result was dramatic—3x to 160x improvement depending on scene complexity. Stanford Dragon went from 0.6 FPS to 96 FPS.
-
-More importantly, I learned a systematic methodology that applies everywhere: profile first, identify bottlenecks with data, optimize algorithmically for complexity, then optimize for hardware architecture. Whether you're optimizing rendering pipelines or trading systems, the approach is the same."
+The methodology applies everywhere—whether optimizing rendering or trading systems. Profile with data, optimize algorithmically, then optimize for hardware. Can't optimize what you don't measure."
 
 ---
 
 ## 4. TELL ME ABOUT A CONFLICT ON A TEAM (90 seconds)
 
-**SCRIPT (235 words, ~85 seconds):**
+**SCRIPT (150 words base = ~70 sec | +30 words optional = ~85 sec):**
 
-"During Mini Minecraft, I had a major disagreement with a teammate about terrain generation. I wanted layered Perlin noise creating five realistic biomes. He wanted simple random noise. His concern—my approach took five days versus his two days, and we only had two weeks left.
+"I resolved a major disagreement with my Mini Minecraft teammate by addressing his underlying concern—deadline anxiety—with data, not just technical arguments.
 
-The disagreement got tense. He felt I was over-engineering and risking our deadline. I believed cutting corners on core features would hurt quality.
+The conflict: I wanted layered Perlin noise for realistic terrain, he wanted simple random noise. His worry—my approach took five days versus two days, with only two weeks left.
 
-I realized the real issue wasn't technical—it was deadline anxiety. So I called a meeting and changed my approach.
+I realized it wasn't about technical merit. So I created visual mockups showing the quality difference, then broke down our timeline proving we could parallelize other tasks and still finish two days early. I offered to own terrain generation entirely, reducing his workload. [I also set up a shared project board so he could track my progress daily and see we were on schedule.]
 
-First, I asked him to fully explain his concerns. Confirmed the deadline was the main worry, not the technical approach. Then I created visual mockups comparing both approaches side-by-side. The quality difference was obvious—layered Perlin created realistic mountains and smooth biome transitions, while random noise looked scattered.
+Result: we implemented the better solution, finished two days early, and he acknowledged it looked significantly better. [The final game generated five distinct biomes with realistic mountain ranges and smooth transitions.]
 
-Next, I proposed a data-driven solution. I broke down our timeline, showed we could parallelize other tasks like physics and rendering, and demonstrated we'd still finish two days early with the better approach. I also offered to own terrain generation entirely, reducing his workload.
-
-Result: we implemented full Perlin noise, finished two days early, and he acknowledged the final result looked significantly better.
-
-The lesson—when advocating technical decisions, back it up with data and address underlying concerns. In this case, proving we could meet the deadline was more important than arguing technical superiority."
+The lesson—when advocating technical decisions, address underlying concerns with data. Proving we'd meet the deadline mattered more than arguing technical superiority."
 
 ---
 
 ## 5. TELL ME ABOUT A TIME YOU SHOWED LEADERSHIP (90 seconds)
 
-**SCRIPT (250 words, ~90 seconds):**
+**SCRIPT (155 words base = ~70 sec | +35 words optional = ~85 sec):**
 
-"During PennOS, we were building a complete UNIX-like operating system with a team of four. Week three, we hit a critical roadblock—one teammate blocked on signal handling for three days. This was serious because both scheduler and shell components depended on signals working. Ten days to deadline, morale dropping.
+"I unblocked my PennOS teammate and kept our team on track when signal handling blocked us for three days with ten days to deadline. Instead of taking over, I empowered them to solve it.
 
-I stepped up as leader with two priorities: unblock the teammate without taking over, and keep the team moving.
+I pair-programmed for two hours, asking guiding questions until they discovered the solution themselves—a conceptual misunderstanding about signal delivery timing. Drew architecture diagrams showing signal flow through process control blocks. [The key was helping them understand how signals propagate between parent and child processes in our PCB data structure.]
 
-First, I scheduled a one-on-one and asked them to walk through their approach. Identified a conceptual misunderstanding about signal delivery timing between processes. Instead of just giving the answer, I pair-programmed for two hours, asking guiding questions so they discovered the solution themselves. Also drew architecture diagrams showing signal flow through process control blocks.
+Then I addressed team dynamics. Reframed this as a learning opportunity, not a blocker. Reorganized task dependencies so shell team could parallelize I/O redirection work independently. Set up daily standups to catch blockers earlier.
 
-Second, I addressed team dynamics. Called a meeting and reframed the situation—not a 'blocking issue' but a learning opportunity to understand signal handling better for debugging later. Then I reorganized task dependencies. Identified work that could be parallelized—shell team could work on I/O redirection and pipeline chaining independently while we finished signals. Set up daily fifteen-minute standups to catch blockers earlier.
+Result: teammate finished in two days with real confidence. We completed the project with 98%, implementing all features—preemptive scheduler, full signal handling, POSIX-compliant shell. [Our OS supported 50+ concurrent processes with 95% CPU utilization.]
 
-Result: teammate finished signal handling in two days and gained real confidence. We completed the project with 98%, implementing all features—preemptive scheduler, full signal handling, POSIX-compliant shell with job control.
-
-The lesson: leadership isn't being the smartest person or solving everything yourself. It's empowering your team and removing blockers so everyone contributes their best work."
+The lesson: leadership means empowering your team and removing blockers, not being the smartest person in the room."
 
 ---
 
 ## 6. GOING BEYOND REQUIREMENTS / ABOVE AND BEYOND (90 seconds)
 
-**SCRIPT (245 words, ~85 seconds):**
+**SCRIPT (145 words base = ~65 sec | +40 words optional = ~85 sec):**
 
-"My Linux kernel research is a great example. As a PURM Scholar with Professor Sebastian Angel, the initial goal was straightforward—use eBPF to collect TCP metrics from three kernel functions and analyze one workload, iperf3. Baseline: probe tcp_v4_rcv, tcp_connect, tcp_state_process, generate CSV output.
+"I expanded my Linux kernel research from a basic class project to production-ready infrastructure now used by 15+ researchers, leading to 25% throughput improvements.
 
-But I realized this had limited real-world value. Real systems don't just run iperf3—they have diverse workload patterns. I saw an opportunity to build actually useful infrastructure for the research community, so I expanded scope significantly.
+The baseline requirement: collect TCP metrics from three kernel functions, test one workload. I saw this had limited real-world value, so I expanded scope significantly.
 
-First, increased coverage to five kernel functions instead of three—added congestion_control and cubic for deeper TCP insights. Second, tested multiple workload types—iperf3, Redis benchmarks, high-frequency trading simulations, HTTP traffic—to understand kernel policy performance under different conditions. Third, engineered for real performance—optimized pipeline to handle 10,000+ state transitions per second versus original spec under 1,000.
+I increased coverage to five kernel functions, tested multiple workloads—iperf3, Redis, high-frequency trading simulations, HTTP traffic. Engineered for real performance—10,000+ state transitions per second versus original spec under 1,000. [I optimized the eBPF code to minimize kernel overhead and built a lock-free ring buffer for high-throughput data collection.] Wrote 2,000+ lines of production-quality C and Python with automated visualization dashboards and documentation. Open-sourced everything via KernMLOps repository.
 
-But I also wanted production-ready infrastructure. Wrote 2,000+ lines of C and Python with proper error handling, added automated visualization dashboards for quick bottleneck analysis, created comprehensive documentation. Open-sourced everything via KernMLOps repository—now used by 15+ researchers at Penn and UT Austin.
+Result: professor invited me to present at distributed systems lab, building toward publication. [The research findings are now informing TCP optimization strategies for high-performance networking applications.]
 
-Impact exceeded expectations. Professor invited me to present at distributed systems lab, research led to 25% throughput improvements for specific workloads, building toward potential publication.
-
-The lesson: when you see opportunity for broader impact beyond just meeting requirements, the extra effort is worth it."
+The lesson: when you see opportunity for broader impact, the extra effort is worth it."
 
 ---
 
 ## 7. TIME YOU CHOSE BETWEEN 2 OPTIONS - DECISION MAKING (90 seconds)
 
-**SCRIPT (245 words, ~85 seconds):**
+**SCRIPT (140 words base = ~65 sec | +40 words optional = ~85 sec):**
 
-"In my WebGPU renderer, I faced a critical architectural decision: Forward+ or Clustered Deferred rendering for 5,000 dynamic lights in real-time.
+"I chose the high-risk Clustered Deferred rendering approach over safer Forward+ rendering, achieving 53x performance improvement—from 497ms to 9.3ms per frame at 5,000 lights.
 
-Forward+ was safer—simpler, supports transparency, uses less memory bandwidth, one week to finish. But still performs redundant shading and is limited by overdraw.
+The decision: Forward+ was safer, one week to implement. Clustered Deferred was complex, three weeks, but theoretically 3.5x faster based on algorithmic complexity—O(lights × pixels) versus O(lights × fragments).
 
-Clustered Deferred was high-risk, high-reward—maximum performance by decoupling geometry from lighting, but significantly more complex. G-buffer architecture with multiple render targets plus sophisticated light culling. Three weeks to implement, and if it failed, no time to pivot back.
+But theory wasn't enough for high-stakes decisions. I spent three days building minimal prototypes and measured actual performance. Data confirmed Clustered Deferred was 3.5x faster at our target. [I also researched industry practice and found AAA game engines use deferred rendering for exactly this scenario—dense dynamic lighting at scale.]
 
-I approached this systematically. First, researched industry practice—AAA games use deferred for dense dynamic lighting. Second, analyzed algorithmic complexity. Forward+ is O(lights × fragments)—performance scales with both light count and pixel overdraw. Deferred is O(lights × pixels)—much better at thousands of lights. Third, considered requirements—spec required 5,000 lights, so performance at scale was critical.
+I chose the riskier option because data validated it. Result: 53x improvement over naive rendering, project succeeded. [The final renderer handled 5,000 lights at 60 FPS, rendering the Sponza scene with real-time performance metrics.]
 
-But theory isn't enough for high-stakes decisions. I spent three days building minimal prototypes of both and measured actual performance. Data was clear—Clustered Deferred was 3.5x faster at target light count.
-
-I chose Clustered Deferred despite implementation risk. Result validated the decision—53x improvement over naive rendering, 497 milliseconds to 9.3 milliseconds per frame at 5,000 lights.
-
-The lesson: for critical technical decisions, prototype both options when possible. Data beats theory. Measuring actual performance reveals insights you can't predict."
+The lesson: for critical technical decisions, prototype both options when possible. Data beats theory. Measure actual performance."
 
 ---
 
-## 8. ETHICAL SCENARIO - PERSONAL EMAIL BREACH (60 seconds)
+## 8. ETHICAL SCENARIO - PERSONAL EMAIL BREACH (60-90 seconds)
 
-**SCRIPT (150 words, ~55 seconds):**
+**SCRIPT (95 words base = ~45 sec | +35 words optional = ~65 sec):**
 
-"If I accidentally gave a client my personal email and they sent confidential information there, my immediate action: do NOT open or read the email. Notify my manager immediately before anything else. This is a potential compliance violation and data breach affecting client trust and firm reputation.
+"My immediate action: do NOT open the email. Notify my manager immediately. This is a compliance violation affecting client trust and firm reputation.
 
-My thought process focuses on three things. First, transparency—immediately inform stakeholders: manager, then compliance, IT security, and legal as required. Hiding the mistake makes it worse. Second, containment—document exact timeline: when I gave wrong email, when client sent info, when I discovered it. Ask compliance whether to delete or preserve for investigation. Work with manager to inform client through proper channels. Third, prevention—follow incident response protocol, triple-check emails going forward, use only company directory auto-complete.
+Three priorities: First, transparency—inform manager, compliance, IT security, legal as required. Hiding makes it worse. Second, containment—document timeline, ask compliance whether to delete or preserve, inform client through proper channels. [I would write down exactly when I gave the wrong email, when the client sent information, and when I discovered the mistake.] Third, prevention—follow incident response protocol, triple-check emails, use only company directory.
 
-Key principle: compliance violations are serious. Be transparent, document everything, let appropriate teams handle remediation—don't try fixing it myself."
+Key principle: compliance violations are serious. Be transparent, document everything, let appropriate teams handle it—not me. [Taking responsibility while following proper procedures protects both the client and the firm.]"
 
 ---
 
-## 9. TECHNICAL - APPROACH TO SYSTEM DESIGN (60 seconds)
+## 9. TECHNICAL - APPROACH TO SYSTEM DESIGN (60-90 seconds)
 
 **Question Example:** "How would you design a real-time stock price feed system?"
 
-**SCRIPT (155 words, ~55 seconds):**
+**SCRIPT (100 words base = ~45 sec | +50 words optional = ~70 sec):**
 
-"I'd start by clarifying requirements—how many stocks, how many concurrent users, latency requirements, can we tolerate message loss?
+"I'd design four layers: data ingestion, message broker, processing, and delivery.
 
-For architecture, four layers. First, data ingestion connecting to exchange APIs, normalizing formats. Second, message broker—Apache Kafka for high-throughput event streaming, handles millions of events per second with low latency. Third, processing layer doing real-time aggregation, filtering by user subscriptions. Fourth, delivery layer using WebSocket connections pushing updates to clients.
+First, clarify requirements—stock count, concurrent users, latency tolerance, message loss tolerance.
 
-Key technical decisions focus on performance and scale. Pub-sub pattern where users subscribe to specific stocks rather than broadcasting everything. Batching—send updates every 100ms instead of instantly—reduces network overhead while maintaining perceived real-time performance. Caching layer using Redis for latest prices, reducing database load. Load balancing distributing WebSocket connections.
+Architecture: Kafka message broker for high-throughput event streaming—handles millions of events per second. [Each stock ticker becomes a Kafka topic partition for parallel processing.] Processing layer does real-time aggregation and filters by user subscriptions. WebSocket delivery layer pushes updates.
 
-For reliability—horizontal scaling adding processing nodes as needed, Kafka replication and Redis clustering avoiding single points of failure, comprehensive monitoring tracking message lag and p99 latency. Can't optimize what you don't measure."
+Key decisions: pub-sub pattern where users subscribe to specific stocks. Batch updates every 100ms to reduce network overhead. Redis caching for latest prices. [For redundancy, I'd deploy across multiple availability zones with automatic failover.] Horizontal scaling with Kafka replication and Redis clustering for reliability. Monitor message lag and p99 latency—can't optimize what you don't measure."
 
 ---
 
-## 10. TECHNICAL - DEBUGGING APPROACH (60 seconds)
+## 10. TECHNICAL - DEBUGGING APPROACH (60-90 seconds)
 
 **Question Example:** "System is running slow in production. How do you debug?"
 
-**SCRIPT (160 words, ~55 seconds):**
+**SCRIPT (105 words base = ~50 sec | +45 words optional = ~75 sec):**
 
-"My approach comes from optimizing parallel systems—systematic five-step process.
+"My approach: profile first, optimize second. Systematic five-step process.
 
-First, gather data, don't guess. Check monitoring dashboards for CPU, memory, network, disk I/O. Look at logs for errors or warnings when slowdown started. Ask what changed recently—deployment, traffic spike, configuration change?
+First, gather data—check monitoring for CPU, memory, network, disk I/O. Check logs. Ask what changed—deployment, traffic spike, config change?
 
-Second, reproduce and isolate. Can I reproduce in staging? Affecting all users or specific subset? Binary search approach to isolate which component—frontend, backend, database, network?
+Second, reproduce and isolate. Can I reproduce in staging? Binary search to isolate component—frontend, backend, database, network? [I'd use distributed tracing to follow requests across microservices and identify where latency is being introduced.]
 
-Third, profile and measure. Critical step. In CUDA work, NSight profiling revealed 95% of compute time in ray-intersection tests. Can't optimize what you don't measure. For backend, use APM tools like DataDog, database query analysis, network tracing to identify exact bottleneck.
+Third, profile and measure. In CUDA work, NSight revealed 95% time in ray-intersection. Can't optimize what you don't measure. Use APM tools, database query analysis, network tracing.
 
-Fourth, form hypothesis and test. Based on data, form specific hypothesis—'database query taking five seconds due to missing index.' Test hypothesis, implement fix, measure improvement.
+Fourth, form hypothesis and test. [For example, if database queries are slow, run EXPLAIN to check indexes and execution plans.] Fifth, verify and document.
 
-Finally, verify and document. Confirm fix works in production, document root cause, add monitoring to catch similar issues early. Profile first, optimize second—data-driven debugging is the only reliable approach."
+Data-driven debugging is the only reliable approach."
 
 ---
 
 ## BACKUP STORIES - Quick Scripts
 
-### If Asked About Specific Technical Achievement: Stream Compaction (60s)
+### If Asked About Specific Technical Achievement: Stream Compaction (60-90s)
 
-**SCRIPT (130 words, ~45 seconds):**
+**SCRIPT (130 words base = ~60 sec | +30 words optional = ~75 sec):**
 "In my CUDA path tracer, I implemented stream compaction to optimize parallel efficiency. Problem: as rays terminate—hitting lights or bouncing too many times—we waste GPU threads processing nothing.
 
-I used parallel prefix sum algorithm to compact the active ray buffer, removing terminated rays and keeping threads busy with real work. Achieved 24% to 67% performance improvement depending on scene complexity. Measured everything in NSight profiler with detailed warp occupancy and memory throughput analysis.
+I used parallel prefix sum algorithm to compact the active ray buffer, removing terminated rays and keeping threads busy with real work. Achieved 24% to 67% performance improvement depending on scene complexity. [The technique works by scanning the ray buffer in parallel, identifying active rays, and reorganizing memory so all active rays are contiguous.] Measured everything in NSight profiler with detailed warp occupancy and memory throughput analysis.
 
 This same technique applies to financial systems. When processing market data or running risk simulations, you want to eliminate idle compute and maximize parallel efficiency. It's about keeping hardware fully utilized."
 
 ---
 
-### If Asked About Learning/Growth: Mastering CUDA from Scratch (60s)
+### If Asked About Learning/Growth: Mastering CUDA from Scratch (60-90s)
 
-**SCRIPT (140 words, ~50 seconds):**
+**SCRIPT (140 words base = ~65 sec | +30 words optional = ~80 sec):**
 "Starting GPU Programming, I had zero CUDA experience. Learning curve was steep—GPU programming requires thinking completely differently than CPU code. Managing thousands of threads, memory hierarchies, avoiding divergence. Early implementations were actually slower than CPU versions—frustrating.
 
-My approach was systematic. Worked through NVIDIA's CUDA guide cover-to-cover, focusing on hardware architecture—warps, streaming multiprocessors, memory coalescing. Profiled everything in NSight, even simple kernels, to build intuition. Studied high-performance implementations on GitHub.
+My approach was systematic. Worked through NVIDIA's CUDA guide cover-to-cover, focusing on hardware architecture—warps, streaming multiprocessors, memory coalescing. Profiled everything in NSight, even simple kernels, to build intuition. Studied high-performance implementations on GitHub. [I also joined CUDA forums and read research papers on GPU optimization techniques.]
 
 Breakthrough came when I stopped thinking about individual threads and started thinking about data patterns—how 32 threads in a warp access memory together, how to eliminate divergence, maximize occupancy. By semester end, achieving near-theoretical peak performance.
 
 Lesson: mastering complex systems requires both theoretical understanding and empirical measurement."
+
+---
+
+### If Asked About Onboarding New Team Member Mid-Project (60-90s)
+
+**SCRIPT (135 words base = ~65 sec | +35 words optional = ~85 sec):**
+"I'd focus on three things: getting them context quickly, making them productive fast, and integrating them socially.
+
+First, I'd schedule a one-hour onboarding session to walk through our project architecture, current sprint goals, and where we are in the timeline. [I'd share our design docs, codebase structure, and our team's coding standards so they have references.] I'd explain what each team member owns and how we communicate—Slack channels, standups, code reviews.
+
+Second, I'd pair-program with them on their first task. Choose something meaningful but not critical-path, so they can learn our workflows without pressure. Set them up with development environment, CI/CD access, and documentation.
+
+Third, social integration—introduce them to the team during standup, invite them to team lunch, add them to our group chat. [In my PennOS project, when we added a fourth member mid-way, I created a shared knowledge document and paired with them for two days. They were contributing independently within a week.]
+
+The goal is making them feel valued and productive immediately, not just welcomed."
 
 ---
 

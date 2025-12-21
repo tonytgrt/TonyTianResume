@@ -201,6 +201,26 @@
     \resumeSubHeadingListStart
 
     \resumeProjectHeading
+          {\textbf{MatForge - Advanced Material Rendering System} $|$ \emph{Vulkan 1.3, Slang, C++}}{Nov 2025 -- Dec 2025}
+          \resumeItemListStart
+          \resumeItem{Architected production-quality GPU path tracer implementing four SIGGRAPH papers (2023-2024) in unified Vulkan ray tracing pipeline, contributing 2,400+ lines of C++ and Slang shader code for sampling and geometry systems}
+          \resumeItem{Implemented Quad-Optimized Low-Discrepancy Sequences (QOLDS) from SIGGRAPH 2024, engineering base-3 Sobol' generator with Owen scrambling across 47 dimensions, achieving +2.57 dB PSNR and 44.7\% MSE reduction vs PCG sampling at 512 SPP with <1\% performance overhead}
+          \resumeItem{Developed RMIP (Rectangular MinMax Image Pyramid) intersection shader from SIGGRAPH Asia 2023, enabling tessellation-free displacement mapping through hierarchical texture-space ray traversal with custom Vulkan intersection shaders}
+          \resumeItem{Engineered automated convergence analysis framework generating statistical benchmarks across sampling configurations, validating rendering quality improvements through PSNR/SSIM metrics and CSV-based visualization pipeline}
+          \resumeItem{Integrated techniques into complete Monte Carlo path tracing pipeline supporting glTF 2.0 scenes, HDR environment maps, and KHR\_materials\_displacement extension for physically-based rendering}
+          \resumeItemListEnd
+
+    \resumeProjectHeading
+          {\textbf{Vulkan Grass Renderer} $|$ \emph{Vulkan, GLSL, C++}}{Oct 2025 -- Nov 2025}
+          \resumeItemListStart
+          \resumeItem{Implemented real-time grass rendering system in Vulkan based on SIGGRAPH I3D 2017 paper, simulating up to 1 million grass blades with physics-based animation at interactive frame rates using compute and tessellation pipelines}
+          \resumeItem{Developed GPU compute shader for physics simulation applying gravity, Hooke's law recovery forces, and wind with spatial turbulence to quadratic Bezier curve grass blades, processing 1M+ blade state updates per frame}
+          \resumeItem{Engineered three-tiered GPU culling system (orientation, view-frustum, distance-based probabilistic) achieving 4.31$\times$ performance improvement at 1M blades through efficient atomic operations and indirect draw calls}
+          \resumeItem{Built hardware tessellation pipeline with dynamic LOD based on camera distance, generating smooth blade geometry with exponential falloff from 10 to 2 subdivisions for optimal geometry density}
+          \resumeItem{Created comprehensive ImGui control panel with real-time FPS metrics (average, 1\% lows), frame time graphs, and automated performance testing system generating CSV benchmarks across 40 configurations}
+          \resumeItemListEnd
+
+    \resumeProjectHeading
           {\textbf{WebGPU Renderer} $|$ \emph{WebGPU, TypeScript, WGSL}}{Sep 2025 -- Oct 2025}
           \resumeItemListStart
           \resumeItem{Implemented three advanced rendering techniques for real-time lighting of 5000+ dynamic point lights: Naive Forward, Forward+, and Clustered Deferred rendering using WebGPU compute and graphics pipelines}
