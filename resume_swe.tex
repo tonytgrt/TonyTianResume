@@ -123,9 +123,9 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of Pennsylvania - School of Engineering and Applied Sciences}{Philadelphia, PA}
-      {Computer Engineering, B.S.E.}{May 2027}
+      {B.S.E. in Computer Engineering \& Accelerated M.S.E. in Computer Graphics}{May 2027}
       \resumeItemListStart
-        \resumeItem{GPA: 3.74 | Relevant Courses: GPU Programming, Operating Systems Design \& Implementation, Data Structure \& Algorithm, Advanced Rendering, Interactive Computer Graphics, Computer Animation, Embedded Systems}
+        \resumeItem{GPA: 3.78 | Relevant Courses: GPU Programming, Machine Learning, Operating Systems Design \& Implementation, Data Structure \& Algorithm, Advanced Rendering, Computer Animation, Embedded Systems}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -134,14 +134,24 @@
     \resumeSubHeadingListStart
 
     \resumeProjectHeading
-        {\textbf{CUDA Path Tracer} $|$ \emph{CUDA, C++}}{Sep 2025 - Oct 2025}
-        \resumeItemListStart
-        \resumeItem{Monte Carlo path tracer capable of rendering complex 3D scenes with custom 3D models and environment maps}
-        \resumeItem{Implemented shading BSDF kernel supporting global illumination, multiple importance sampling, anti-aliasing, sub-surface scattering, capable of rendering various PBR material types with albedo and texture maps}
-        \resumeItem{Integrated third-party libraries of tinyGLTF to support glTF 2.0 mesh loading and Nvidia OptiX for denoising}
-        \resumeItem{Utilized various techniques to boost performance: material sorting (+5\%), Russian Roulette (+6\% - 24\%), stream compaction (+24\% - 67\%), and Bounding Volume Hierachy (3$\times$ - $160\times$ framerate in complex scenes) }
-        \resumeItem{Project Repo and Demo: \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{\uline{github.com/tonytgrt/CUDA-Path-Tracer}}. A previous standalone performance focused stream compaction project with detailed analysis in Nsight: \href{https://github.com/tonytgrt/Project2-Stream-Compaction}{\uline{github.com/tonytgrt/Project2-Stream-Compaction}}}
-        \resumeItemListEnd
+      {\textbf{MatForge - Advanced Material Rendering System} $|$ \emph{Vulkan, Slang, C++}}{Nov 2025 -- Dec 2025}
+      \resumeItemListStart
+      \resumeItem{Architected production-quality GPU path tracer implementing four SIGGRAPH papers (2023-2024) in unified Vulkan ray tracing pipeline, contributing 2,400+ lines of C++ and Slang code for sampling and geometry systems}
+      \resumeItem{Implemented Quad-Optimized Low-Discrepancy Sequences (QOLDS) from SIGGRAPH 2024, engineering base-3 Sobol' generator with Owen scrambling across 47 dimensions, achieving +2.57 dB PSNR and 44.7\% MSE reduction vs PCG sampling at 512 SPP with $<1\%$ performance overhead}
+      \resumeItem{Developed RMIP (Rectangular MinMax Image Pyramid) intersection shader , enabling tessellation-free displacement mapping through hierarchical texture-space ray traversal with custom Vulkan intersection shaders}
+      \resumeItem{Integrated techniques into complete Monte Carlo path tracing pipeline supporting glTF 2.0 scenes, HDR environment maps, and KHR\_materials\_displacement extension for physically-based rendering}
+      \resumeItem{GitHub Repo: \href{https://github.com/MatForge/MatForge}{\uline{github.com/MatForge/MatForge}}}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+      {\textbf{CUDA Path Tracer - 3D PBR Renderer} $|$ \emph{CUDA, GLSL, C++}}{Sep 2025 - Oct 2025}
+      \resumeItemListStart
+      \resumeItem{Monte Carlo path tracer capable of rendering complex 3D scenes with custom 3D models and environment maps}
+      \resumeItem{Implemented shading BSDF kernel supporting global illumination, multiple importance sampling, anti-aliasing, sub-surface scattering, capable of rendering various PBR material types with albedo and texture maps}
+      \resumeItem{Integrated third-party libraries of tinyGLTF to support glTF 2.0 mesh loading and Nvidia OptiX for denoising}
+      \resumeItem{Utilized various techniques to boost performance: material sorting (+5\%), Russian Roulette (+6\% - 24\%), stream compaction (+24\% - 67\%), and Bounding Volume Hierachy (3$\times$ - $160\times$ framerate in complex scenes) }
+      \resumeItem{Project Repo and Demo: \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{\uline{github.com/tonytgrt/CUDA-Path-Tracer}}. A previous standalone performance focused stream compaction project with detailed analysis in Nsight: \href{https://github.com/tonytgrt/Project2-Stream-Compaction}{\uline{github.com/tonytgrt/Project2-Stream-Compaction}}}
+      \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, Shell, Kernel}}{Mar 2025 -- May 2025}
@@ -150,17 +160,10 @@
         \resumeItem{Designed Process Control Block (PCB) data structure managing 50+ concurrent processes with metadata including PID allocation, priority levels, parent-child relationships, signal handling, and user/kernel stack management}
         \resumeItem{Implemented preemptive multi-level priority scheduler supporting 3 priority levels with Round Robin time-slicing (10ms quantum), preventing starvation through priority aging and achieving 95\% CPU utilization}
         \resumeItem{Built POSIX-compliant interactive shell supporting 15+ built-in commands (ps, kill, jobs, fg/bg), I/O redirection, pipeline chaining, and batch script execution with robust error handling}
+        \resumeItem{Developed comprehensive system call interface including p\_spawn(), p\_wait(), p\_sleep(), signal delivery (SIGTERM, SIGSTOP, SIGCONT), and file I/O wrappers with proper resource cleanup and zombie process reaping}
+        \resumeItem{Implemented job control and signal handling system supporting background process management and graceful process termination across parent-child hierarchies}
       \resumeItemListEnd
    
-    \resumeProjectHeading
-      {\textbf{WebGPU Renderer} $|$ \emph{WebGPU, TypeScript, WGSL}}{Sep 2025 -- Oct 2025}
-      \resumeItemListStart
-      \resumeItem{Implemented three advanced rendering techniques for real-time lighting of 5000+ dynamic point lights: Naive Forward, Forward+, and Clustered Deferred rendering using WebGPU compute and graphics pipelines}
-      \resumeItem{Engineered screen-space light clustering system using compute shaders, subdividing view frustum into 16×9×24 grid with exponential depth slicing and sphere-AABB intersection testing for efficient light culling}
-      \resumeItem{Achieved 53x performance improvement over naive rendering (497ms to 9.3ms at 5000 lights) and 3.5x speedup vs Forward+ through overdraw elimination and optimized memory access patterns}
-      \resumeItem{Live demo deployed at \href{http://webgpu.tonyxtian.com}{\uline{webgpu.tonyxtian.com}}, rendering Sponza scene with real-time performance metrics and interactive controls. GitHub repo: \href{https://github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}{\uline{github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}}}
-      \resumeItemListEnd
-          
     \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
@@ -175,15 +178,6 @@
         \resumeItem{Architected and contributed 2000+ lines of C and Python code to open-source KernMLOps repo, implementing kernel probing infrastructure used by 15+ researchers. GitHub Repo: \href{https://github.com/tonytgrt/KernMLOps}{\uline{github.com/tonytgrt/KernMLOps}}}
     \resumeItemListEnd
 
-
-    \resumeSubheading
-      {Beta Test Engineer \& QA Analyst}{Dec 2022 -- Oct 2023}
-      {miHoYo - Genshin Impact (AAA Mobile Gaming)}{Remote}
-      \resumeItemListStart
-        \resumeItem{Selected as exclusive beta tester for Genshin Impact, a \$4B+ revenue mobile game with 60M+ monthly active users, participating in pre-release testing cycles every 6 weeks}
-        \resumeItem{Conducted comprehensive quality assurance testing for 10+ character releases, each generating \$1M+ in revenue, ensuring gameplay balance and identifying critical performance issues before public launch}
-        \resumeItem{Performed systematic testing of open-world gameplay mechanics including combat systems, puzzle design, and performance optimization across multiple mobile platforms (iOS, Windows)}
-        \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 
