@@ -1,0 +1,13 @@
+\documentclass{setting}
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+%%%% 利用tikz来定位照片
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor = north east] at ($(current page.north east)+(-1cm,0cm)$) {\includegraphics[height=3.5cm]{avatar}};
+\end{tikzpicture}%
+
+\input{body}
+
+\input{footer}
+\end{document}

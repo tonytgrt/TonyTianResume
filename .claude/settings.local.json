@@ -6,7 +6,10 @@
       "WebSearch",
       "Bash(pdflatex -interaction=nonstopmode resume_all.tex)",
       "Bash(pdflatex -interaction=nonstopmode resume_cg.tex)",
-      "Bash(rm resume_cg.aux resume_cg.log resume_cg.out resume_cg.synctex.gz)"
+      "Bash(rm resume_cg.aux resume_cg.log resume_cg.out resume_cg.synctex.gz)",
+      "Bash(pdflatex:*)",
+      "Bash(xelatex:*)",
+      "Bash(where:*)"
     ],
     "deny": [],
     "ask": []
