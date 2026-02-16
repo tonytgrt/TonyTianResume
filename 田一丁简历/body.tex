@@ -14,6 +14,7 @@
 \begin{itemize}
   \item GPA 3.78
   \item 相关课程: GPU编程、游戏设计、3D建模、计算机动画、UI/UX设计、机器学习、操作系统、数据结构与算法
+  \item 到岗时间：2026/05/25 - 2026/08/25
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,27 +33,28 @@
 \datedline{\textbf{WebGPU渲染器 - 网页端GPU实时渲染器} $|$ \emph{WebGPU, TypeScript, WGSL}}{\dateRange{2025.10}{2025.11}}
 \begin{itemize}
   \item 基于WebGPU Compute与图形管线，在5000余个动态光源的场景中实现三种实时光照方案：Naive Forward、Forward+、Clustered Deferred
-  \item 设计屏幕空间光源聚簇系统：将视锥体划分为16×9×24格子，采用指数深度切片与球体-AABB相交检测以高效剔除光源
+  \item 设计屏幕空间光源聚簇系统：将视锥体划分为16×9×24的网格，采用指数深度切片与球体-AABB相交检测以高效剔除光源
   \item 构建三目标G-buffer架构（位置、法线、Albedo），实现两遍延迟渲染，将几何复杂度与光照计算解耦
   \item Clustered Deferred消除了过度绘制与优化了内存访问，性能较Naive Forward最高提升53倍，较Forward+提升3.5倍
   \item 在线演示: \url{https://webgpu.tonyxtian.com}，可使用任何支持WebGPU的设备无需下载实时体验Demo
   \item 项目仓库: \url{https://github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}
 \end{itemize}
 
-\datedline{\textbf{PennOS - 类UNIX操作系统} $|$ \emph{C, Shell, Kernel}}{\dateRange{2025.03}{2025.05}}
+\datedline{\textbf{Mini Minecraft} $|$ \emph{C++, Qt, GLSL}}{\dateRange{2024.10}{2024.12}}
 \begin{itemize}
-  \item 使用C语言从零架构并实现完整的用户级操作系统，包含8000+行系统代码，支持完整的进程生命周期管理
-  \item 设计进程控制块(PCB)数据结构，管理50+并发进程，包含PID分配、优先级、父子关系及用户/内核栈管理
-  \item 实现Round Robin Scheduler，支持3个优先级的轮转调度，防止Starvation同时CPU利用率可达95\%
-  \item 构建POSIX兼容的交互式Shell，支持15+内建命令(ps、kill、jobs、fg/bg)、I/O重定向、管道链接及脚本执行
-  \item 实现完整的系统调用接口，包括p\_spawn()、p\_wait()、信号传递(SIGTERM、SIGSTOP等)及文件I/O封装
+  \item 使用C++和OpenGL开发完整的游戏引擎，生成含100万+方块的无限世界并保持60+ FPS
+  \item 构建程序化地形生成系统，使用分层2D/3D柏林噪声算法，创建5种不同生物群落（草地、山脉、沙漠、岛屿、洞穴），含生物群落特定方块分布和程序化植被生成
+  \item 实现后处理渲染管线与自定义GLSL片段着色器，支持水下/岩浆动态扭曲效果及实时准星叠加渲染
+  \item 开发双物理模拟系统：基于重力的地面碰撞检测，以及水/岩浆浮力计算，另含6自由度创造模式飞行
+  \item 实现实时方块操作（挖掘/放置），基于光线投射求交检测与即时网格更新，支持16种不同方块类型
+  \item 项目演示: https://youtu.be/jRb4EHV5KQI
 \end{itemize}
 
 \logosection{\faFlask}{科研经历}
 
 \datedline{\textbf{学习导向操作系统(LDOS)}}{\dateRange{2025.05}{2025.08}}
 \begin{itemize}
-  \item 开发基于eBPF的内核监控基础设施，从tcp\_v4\_rcv、v4\_connect、state\_process、congestion\_control、cubic等5个关键内核TCP函数中采集实时网络指标
+  \item 开发基于eBPF的内核监控基础设施，从tcp\_v4\_rcv、v4\_connect、state\_process、congestion\_control等关键内核TCP函数中采集实时网络指标
   \item 构建高性能数据分析管线，每秒处理10,000+次TCP状态转换，识别内核网络策略与拥塞控制算法中的关键性能瓶颈
   \item 向开源KernMLOps仓库贡献2000+行C和Python代码，实现的内核探测基础设施被15余名研究人员使用。项目仓库: \url{https://github.com/tonytgrt/KernMLOps}
 \end{itemize}
@@ -65,7 +67,7 @@
   \item 编程: C++, CUDA, Python, WGSL, GLSL；并行算法, 内存管理, 渲染管线开发
   \item 图形/渲染: NSight性能分析, 路径追踪, 延迟渲染, 光栅化, 动画系统, PBR
   \item 工具/API: Unreal, Unity, Maya, Nvidia NSight, WebGPU, Vulkan, Visual Studio, Qt, OpenGL, Git, CMake
-  \item 语言: 英语流利（托福110），日语入门
+  %\item 语言: 英语流利（托福110），日语入门
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
