@@ -201,6 +201,25 @@
     \resumeSubHeadingListStart
 
     \resumeProjectHeading
+          {\textbf{Metal Liquid Glass Renderer} $|$ \emph{Metal, MSL, Objective-C++, MetalKit}}{Feb 2026}
+          \resumeItemListStart
+          \resumeItem{Built multi-pass GPU compositing system in Apple Metal rendering a physically-based liquid glass panel over a runtime-loaded background, implementing custom \texttt{MTLRenderPipelineState} objects and off-screen \texttt{MTLTexture} targets within an \texttt{MTKView} delegate render loop}
+          \resumeItem{Engineered liquid glass fragment shader in Metal Shading Language using SDF-based rounded rectangle geometry with convex lens height field, computing per-pixel surface normals via 4-tap finite-difference gradient and applying Metal's \texttt{refract()} with Schlick Fresnel approximation for physically accurate edge reflections}
+          \resumeItem{Implemented separable two-pass Gaussian blur with configurable $\sigma$ on GPU-private (\texttt{MTLStorageModePrivate}) intermediate textures, using a dirty-flag to skip re-blur when the background is unchanged, reducing per-frame GPU work to a single composite pass at steady state}
+          \resumeItem{Developed cross-platform renderer (macOS/iOS/tvOS) via conditional compilation, runtime texture loading with \texttt{MTKTextureLoader}, and shared triangle-strip quad geometry reused across all render passes}
+          \resumeItemListEnd
+
+    \resumeProjectHeading
+          {\textbf{Stack-N-Climb - Unreal Engine 5 Climbing Platformer} $|$ \emph{Unreal Engine 5, C++, Blueprint}}{Feb 2026}
+          \resumeItemListStart
+          \resumeItem{Built third-person climbing platformer in Unreal Engine 5 (C++/Blueprint hybrid) where the player shoots falling disks to freeze them as platforms and ascends to a target altitude, extending the Stack-O-Bot starter template with custom gameplay systems}
+          \resumeItem{Architected component-based game systems in C++: \texttt{ADiskSpawner} managing a configurable N×M respawning disk grid, \texttt{AFallingDisk} implementing a 3-state machine (Falling/FrozenRed/FrozenGreen) with automatic state transitions, and \texttt{UShootingComponent} as a reusable \texttt{UActorComponent} decoupled from the player character}
+          \resumeItem{Engineered complex freeze-rule system: single-active-red-disk constraint above the player with automatic prior-disk unfreeze on re-shoot, automatic red-to-green promotion as the player climbs past a disk, and instant unfreeze when the player descends below a frozen green disk}
+          \resumeItem{Implemented camera-accurate hitscan shooting via line trace through the camera frustum, ADS mode with smooth spring arm \texttt{SocketOffset} lerp per tick, dynamic Niagara beam VFX from character chest to hit point, and physics-based knockback on airborne player collision with falling disks}
+          \resumeItem{Demo: \href{https://youtu.be/Ms5AON0CXhE}{\underline{youtu.be/Ms5AON0CXhE}}}
+          \resumeItemListEnd
+
+    \resumeProjectHeading
           {\textbf{MatForge - Advanced Material Rendering System} $|$ \emph{Vulkan 1.3, Slang, C++}}{Nov 2025 -- Dec 2025}
           \resumeItemListStart
           \resumeItem{Architected production-quality GPU path tracer implementing four SIGGRAPH papers (2023-2024) in unified Vulkan ray tracing pipeline, contributing 2,400+ lines of C++ and Slang shader code for sampling and geometry systems}
