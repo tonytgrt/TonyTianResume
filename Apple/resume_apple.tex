@@ -1,0 +1,207 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\input{glyphtounicode}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.0in}
+
+
+\urlstyle{same}
+
+%\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+% Adjust underline depth to be closer to text
+\renewcommand{\ULdepth}{2.5pt}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-7pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tony Yiding Tian} \\ \vspace{1pt}
+    \small Philadelphia, PA $|$ (267)249-1202 $|$ \href{mailto:tonytg@seas.upenn.edu}{\underline{tonytg@seas.upenn.edu}} $|$
+    \href{https://tonyxtian.com}{\underline{tonyxtian.com}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Pennsylvania}{Philadelphia, PA}
+      {B.S.E. in Computer Engineering \& Accelerated M.S.E. in Computer Graphics}{May 2027}
+      \resumeItemListStart
+        \resumeItem{GPA: 3.78 | Relevant Courses: GPU Programming, 3D Modeling, Advanced Rendering, Computer Animation, Game Design Practicum, UI/UX Design,  Operating Systems Implementation, Data Structures \& Algorithms}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  %-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+          {\textbf{Metal Liquid Glass Renderer} $|$ \emph{Metal, MSL, Objective-C++}}{Feb 2026}
+          \resumeItemListStart
+          \resumeItem{Built multi-pass GPU compositing system in Apple Metal rendering a physically-based liquid glass panel over a runtime-loaded background, implementing custom \texttt{MTLRenderPipelineState} objects and off-screen \texttt{MTLTexture} targets within an \texttt{MTKView} delegate render loop}
+          \resumeItem{Engineered liquid glass fragment shader in Metal Shading Language using SDF-based rounded rectangle geometry with convex lens height field, computing per-pixel surface normals via 4-tap finite-difference gradient and applying Metal's \texttt{refract()} with Schlick Fresnel approximation for physically accurate edge reflections}
+          \resumeItem{Implemented separable two-pass Gaussian blur with configurable $\sigma$ on GPU-private (\texttt{MTLStorageModePrivate}) intermediate textures, using a dirty-flag to skip re-blur when the background is unchanged, reducing per-frame GPU work to a single composite pass at steady state}
+          \resumeItem{GitHub Repo: \href{https://github.com/tonytgrt/MetalRenderer}{\uline{github.com/tonytgrt/MetalRenderer}}}
+          \resumeItemListEnd
+
+\resumeProjectHeading
+      {\textbf{MatForge - Advanced Material Rendering System} $|$ \emph{Vulkan, Slang, C++}}{Nov 2025 -- Dec 2025}
+      \resumeItemListStart
+      \resumeItem{Architected production-quality GPU path tracer implementing four SIGGRAPH papers (2023-2024) in unified Vulkan ray tracing pipeline, contributing 2,400+ lines of C++ and Slang code for sampling and geometry systems}
+      \resumeItem{Implemented Quad-Optimized Low-Discrepancy Sequences (QOLDS) from SIGGRAPH 2024, engineering base-3 Sobol' generator with Owen scrambling across 47 dimensions, achieving +2.57 dB PSNR and 44.7\% MSE reduction vs traditional PCG sampling at 512 SPP with $<1\%$ performance overhead}
+      \resumeItem{Developed RMIP (Rectangular MinMax Image Pyramid) intersection shader , enabling tessellation-free displacement mapping through hierarchical texture-space ray traversal with custom Vulkan intersection shaders}
+      \resumeItem{Integrated techniques into complete Monte Carlo path tracing pipeline supporting glTF 2.0 scenes, HDR environment maps, and KHR\_materials\_displacement extension for physically-based rendering}
+      \resumeItem{GitHub Repo: \href{https://github.com/MatForge/MatForge}{\uline{github.com/MatForge/MatForge}}}
+      \resumeItemListEnd
+
+% \resumeProjectHeading
+%       {\textbf{Vulkan Grass Renderer - Physically Based Grass Simulation} $|$ \emph{Vulkan, GLSL, C++}}{Oct 2025 -- Nov 2025}
+%       \resumeItemListStart
+%       \resumeItem{Implemented real-time grass rendering system in Vulkan, simulating up to 1 million grass blades with physics-based animation at interactive frame rates using compute and tessellation pipelines}
+%       \resumeItem{Developed GPU compute shader for physics simulation applying gravity, Hooke's law recovery forces, and wind with spatial turbulence to quadratic Bezier curve grass blades, processing 1M+ blade state updates per frame}
+%       \resumeItem{Engineered three-tiered GPU culling system (orientation, view-frustum, distance-based probabilistic) achieving 4.31$\times$ performance improvement at 1M blades through efficient atomic operations and indirect draw calls}
+%       \resumeItem{Built hardware tessellation pipeline with dynamic LOD based on camera distance, generating smooth blade geometry with exponential falloff from 10 to 2 subdivisions for optimal geometry density}
+%       \resumeItem{Created comprehensive ImGUI control panel with real-time FPS metrics (average, 1\% lows), frame time graphs, and automated performance testing system generating CSV benchmarks across 40 configurations}
+%       \resumeItem{GitHub Repo: \href{https://github.com/tonytgrt/Vulkan-Grass-Renderer}{\uline{github.com/tonytgrt/Vulkan-Grass-Renderer}}}
+%       \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{CUDA Path Tracer - 3D PBR Renderer} $|$ \emph{CUDA, GLSL, C++}}{Sep 2025 - Oct 2025}
+  \resumeItemListStart
+  \resumeItem{Monte Carlo path tracer capable of rendering complex 3D scenes with custom 3D models and environment maps}
+  \resumeItem{Implemented shading BSDF kernel supporting global illumination, multiple importance sampling, anti-aliasing, sub-surface scattering, capable of rendering various PBR material types with albedo and texture maps}
+  \resumeItem{Integrated third-party libraries of tinyGLTF to support glTF 2.0 mesh loading and Nvidia OptiX for denoising}
+  \resumeItem{Utilized various techniques to boost performance: material sorting (+5\%), Russian Roulette (+6\% - 24\%), stream compaction (+24\% - 67\%), and Bounding Volume Hierachy (3$\times$ - $160\times$ framerate in complex scenes) }
+  \resumeItem{Project Repo and Demo: \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{\uline{github.com/tonytgrt/CUDA-Path-Tracer}}. A previous standalone performance focused stream compaction project with detailed analysis in Nsight: \href{https://github.com/tonytgrt/Project2-Stream-Compaction}{\uline{github.com/tonytgrt/Project2-Stream-Compaction}}}
+\resumeItemListEnd
+
+\resumeProjectHeading
+      {\textbf{WebGPU Renderer - Real-time Renderer on Web} $|$ \emph{WebGPU, TypeScript, WGSL}}{Sep 2025 -- Oct 2025}
+      \resumeItemListStart
+      \resumeItem{Implemented three advanced rendering techniques for real-time lighting of 5000+ dynamic point lights: Naive Forward, Forward+, and Clustered Deferred rendering using WebGPU compute and graphics pipelines}
+      \resumeItem{Engineered screen-space light clustering system using compute shaders, subdividing view frustum into 16×9×24 grid with exponential depth slicing and sphere-AABB intersection testing for efficient light culling}
+      \resumeItem{Developed G-buffer architecture with 3 render targets (position, normal, albedo) enabling two-pass deferred rendering that decouples geometry complexity from lighting calculations}
+      \resumeItem{Achieved 53x performance improvement over naive rendering (497ms to 9.3ms at 5000 lights) and 3.5x speedup vs Forward+ through overdraw elimination and optimized memory access patterns}
+      \resumeItem{Built automated performance testing system collecting statistical frame time data across 30 configurations (3 renderers × 10 light counts), generating CSV analysis for rigorous benchmarking}
+      \resumeItem{Live demo deployed at \href{http://webgpu.tonyxtian.com}{\uline{webgpu.tonyxtian.com}}, rendering Sponza scene with real-time performance metrics and interactive controls. GitHub repo: \href{https://github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}{\uline{github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}}}
+      \resumeItemListEnd
+    
+
+      
+\resumeSubHeadingListEnd
+
+
+
+
+\enlargethispage{20pt}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Programming}{: C++, CUDA, GLSL, WGSL, MSL, Python, Parallel algorithms, Memory management} \\
+    \textbf{Graphics/Rendering}{: NSight Profiling, Path Tracing, Deferred Rendering, Rasterization, Animation systems, PBR} \\
+    \textbf{Tools/APIs}{: Unreal, Unity, Maya, Metal, Nvidia NSight, WebGPU, Vulkan, Visual Studio, Qt, OpenGL, Git, CMake}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
