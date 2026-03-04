@@ -21,6 +21,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \logosection{\faLaptopCode}{项目经历}
+\datedline{\textbf{ButterFlight - 蝴蝶飞行动画创作工具} $|$ \emph{Maya, C++, MEL}}{\dateRange{2026.02}{2026.05}}
+\begin{itemize}
+  \item 与团队共2人基于Chen et al.\ SIGGRAPH '22论文，开发Maya C++插件（\texttt{.mll}），实现蝴蝶飞行动画的自动物理模拟，使VFX艺术家无需手动设置关键帧或掌握空气动力学知识即可在场景中批量生成蝴蝶动画
+  \item 实现基于论文的三模块物理管线：参数化5自由度关节角建模（胸部俯仰、翅膀拍打/羽化/扫掠，腹部以$-180^\circ$相位偏移驱动骨骼层级）；curl-noise涡流力场模拟真实蝴蝶飞行轨迹固有的混沌噪声
+  \item 开发支持最多100个独立个体（含个体间排斥力）的群体模拟、NURBS路径跟随模式、随时间变化的风力交互，将结果烘焙为标准Maya \texttt{animCurve}关键帧并支持导出至Alembic或FBX
+  \item 项目仓库：\url{https://github.com/tonytgrt/ButterFlight}
+\end{itemize}
+
 \datedline{\textbf{CUDA路径追踪器 - 3D PBR渲染器} $|$ \emph{CUDA, GLSL, C++}}{\dateRange{2025.09}{2025.10}}
 \begin{itemize}
   \item 蒙特卡洛路径追踪器，可渲染包含自定义模型与环境贴图的复杂3D场景
@@ -40,15 +48,15 @@
   \item 项目仓库: \url{https://github.com/tonytgrt/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred}
 \end{itemize}
 
-\datedline{\textbf{Mini Minecraft} $|$ \emph{C++, Qt, GLSL}}{\dateRange{2024.10}{2024.12}}
-\begin{itemize}
-  \item 使用C++和OpenGL开发完整的游戏引擎，生成含100万+方块的无限世界并保持60+ FPS
-  \item 构建程序化地形生成系统，使用分层2D/3D柏林噪声算法，创建5种不同生物群落（草地、山脉、沙漠、岛屿、洞穴），含生物群落特定方块分布和程序化植被生成
-  \item 实现后处理渲染管线与自定义GLSL片段着色器，支持水下/岩浆动态扭曲效果及实时准星叠加渲染
-  \item 开发双物理模拟系统：基于重力的地面碰撞检测，以及水/岩浆浮力计算，另含6自由度创造模式飞行
-  \item 实现实时方块操作（挖掘/放置），基于光线投射求交检测与即时网格更新，支持16种不同方块类型
-  \item 项目演示: https://youtu.be/jRb4EHV5KQI
-\end{itemize}
+% \datedline{\textbf{Mini Minecraft} $|$ \emph{C++, Qt, GLSL}}{\dateRange{2024.10}{2024.12}}
+% \begin{itemize}
+%   \item 使用C++和OpenGL开发完整的游戏引擎，生成含100万+方块的无限世界并保持60+ FPS
+%   \item 构建程序化地形生成系统，使用分层2D/3D柏林噪声算法，创建5种不同生物群落（草地、山脉、沙漠、岛屿、洞穴），含生物群落特定方块分布和程序化植被生成
+%   \item 实现后处理渲染管线与自定义GLSL片段着色器，支持水下/岩浆动态扭曲效果及实时准星叠加渲染
+%   \item 开发双物理模拟系统：基于重力的地面碰撞检测，以及水/岩浆浮力计算，另含6自由度创造模式飞行
+%   \item 实现实时方块操作（挖掘/放置），基于光线投射求交检测与即时网格更新，支持16种不同方块类型
+%   \item 项目演示: https://youtu.be/jRb4EHV5KQI
+% \end{itemize}
 
 \logosection{\faFlask}{科研经历}
 
@@ -64,10 +72,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \logosection{\faCode}{相关技能}
 \begin{itemize}[parsep=0.5ex]
-  \item 编程: C++, CUDA, Python, WGSL, GLSL；并行算法, 内存管理, 渲染管线开发
-  \item 图形/渲染: NSight性能分析, 路径追踪, 延迟渲染, 光栅化, 动画系统, PBR
-  \item 工具/API: Unreal, Unity, Maya, Nvidia NSight, WebGPU, Vulkan, Visual Studio, Qt, OpenGL, Git, CMake
-  \item 语言: 英语流利（托福110），日语入门
+  \item 编程/API: C/C++, CUDA, OpenGL, GLSL, Vulkan, WebGPU, WGSL, Metal, MSL, MEL, Python
+  \item 图形/渲染: NSight性能分析, 路径追踪，全局光照，渲染管线，延迟渲染, 物理模拟, 动画系统, PBR
+  \item 软件/工具: Unreal (C++), Unity, Maya (MEL), NSight, Visual Studio, Houdini, Qt, Git, CMake
+  \item 语言: 英语流利（托福110, ACT 36），日语入门（N5），粤语入门
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

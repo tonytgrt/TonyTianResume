@@ -220,6 +220,14 @@
           \resumeItemListEnd
 
     \resumeProjectHeading
+          {\textbf{ButterFlight - Butterfly Flight Animation Authoring Tool} $|$ \emph{Maya C++, MEL, Python}}{Feb 2026 -- Present}
+          \resumeItemListStart
+          \resumeItem{Developing Maya 2026 C++ plug-in (\texttt{.mll}) with team of 2 that automates physically plausible butterfly flight animation based on Chen et al.\ 2022 ACM SIGGRAPH paper, enabling VFX artists to populate scenes with butterflies without manual keyframing or aerodynamics knowledge}
+          \resumeItem{Implemented three-module physics pipeline: parametric 5-DOF joint-angle modeling (thorax pitch, wing flap/feather/sweep, abdomen at $-180^\circ$ phase offset) driving a hierarchical skeleton; per-wing quasi-steady aerodynamic lift and drag forces from Ellington 1984 quasi-steady theory; and curl-noise vortex force field for the inherent chaotic trajectory noise characteristic of real butterfly flight}
+          \resumeItem{Developed swarm simulation supporting up to 100 independent agents with inter-agent repulsion; NURBS path-following mode; time-varying wind interaction; and MEL-scripted artist UI with 7 collapsible parameter sections, baking output to standard Maya \texttt{animCurve} keyframes exportable to Alembic or FBX}
+          \resumeItemListEnd
+
+    \resumeProjectHeading
           {\textbf{MatForge - Advanced Material Rendering System} $|$ \emph{Vulkan 1.3, Slang, C++}}{Nov 2025 -- Dec 2025}
           \resumeItemListStart
           \resumeItem{Architected production-quality GPU path tracer implementing four SIGGRAPH papers (2023-2024) in unified Vulkan ray tracing pipeline, contributing 2,400+ lines of C++ and Slang shader code for sampling and geometry systems}
