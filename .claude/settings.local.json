@@ -9,7 +9,8 @@
       "Bash(rm resume_cg.aux resume_cg.log resume_cg.out resume_cg.synctex.gz)",
       "Bash(pdflatex:*)",
       "Bash(xelatex:*)",
-      "Bash(where:*)"
+      "Bash(where:*)",
+      "PowerShell($p = \"c:\\\\Users\\\\24112\\\\OneDrive - PennO365\\\\Penn\\\\Recruiting\\\\Resume\\\\resume_all.pdf\"; $b = [System.IO.File]::ReadAllBytes\\($p\\); \"Size: $\\($b.Length\\)\"; \"Head: \" + [System.Text.Encoding]::ASCII.GetString\\($b[0..\\([Math]::Min\\(63,$b.Length-1\\)\\)]\\); \"Tail: \" + [System.Text.Encoding]::ASCII.GetString\\($b[\\([Math]::Max\\(0,$b.Length-64\\)\\)..\\($b.Length-1\\)]\\))"
     ],
     "deny": [],
     "ask": []

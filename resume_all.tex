@@ -137,6 +137,18 @@
 \section{Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
+      {UI Rendering GPU Software Engineer Intern}{May 2026 -- Aug 2026}
+      {Apple}{Cupertino, CA}
+      \resumeItemListStart
+        \resumeItem{Designed and shipped internal developer tooling for a production GPU rendering stack, taking it from proposal through design, implementation, on-device validation, and multi-round code review with senior engineers toward integration into a shared release branch}
+        \resumeItem{Engineered a thread-safe publish/observe mechanism in a large, performance-sensitive C++ codebase, replacing a per-consumer duplication scheme so a shared GPU resource is built once and referenced by every consumer instead of once each}
+        \resumeItem{Applied compiler-enforced thread-safety annotations to shared mutable state so lock violations fail the build rather than relying on convention, and added runtime assertions for an invariant that static analysis could not express across differing ownership models}
+        \resumeItem{Reduced net code size while adding functionality by unifying two near-duplicate cache-invalidation paths behind one parameterized helper, which also eliminated unnecessary GPU pipeline recompilation on the narrower path}
+        \resumeItem{Diagnosed multi-platform defects reproducible only in specific SDK and CPU-architecture build configurations, and authored controlled experiments that overturned an initial performance assumption by isolating where cost actually occurred}
+        \resumeItem{Built cross-platform CLI tooling and wrote internal architecture documentation of the subsystems involved, verified against source, to make the workflow usable by other engineers after the internship}
+    \resumeItemListEnd
+
+    \resumeSubheading
       {Linux Kernel Policies Research Assistant - PURM Scholar}{May 2025 -- Present}
       {Learning Directed Operating System (\href{https://ldos.utexas.edu/}{\underline{LDOS}}), Prof. Sebastian Angel}{Philadelphia, PA}
       \resumeItemListStart
@@ -328,7 +340,7 @@
 
 
 
-\enlargethispage{20pt}
+\enlargethispage{60pt}
 
 
 %
