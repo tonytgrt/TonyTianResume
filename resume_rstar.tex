@@ -1,0 +1,192 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\input{glyphtounicode}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.0in}
+
+
+\urlstyle{same}
+
+%\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+% Adjust underline depth to be closer to text
+\renewcommand{\ULdepth}{2.5pt}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-7pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tony Yiding Tian} \\ \vspace{1pt}
+    \small Philadelphia, PA $|$ (267)249-1202 $|$ \href{mailto:tonytg@engineering.upenn.edu}{\underline{tonytg@engineering.upenn.edu}} $|$
+    \href{https://tonyxtian.com}{\underline{tonyxtian.com}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Pennsylvania}{Philadelphia, PA}
+      {B.S.E. in Computer Engineering \& Accelerated M.S.E. in Computer Graphics}{May 2027}
+      \resumeItemListStart
+        \resumeItem{GPA: 3.79 | Relevant Courses: Computer Animation, 3D Modeling, UI/UX Design, Procedural Graphics, GPU Programming, Advanced Rendering, Data Structures \& Algorithms, Operating Systems Implementation}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  \section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {UI Rendering GPU Software Engineer Intern}{May 2026 -- Aug 2026}
+      {Apple}{Cupertino, CA}
+      \resumeItemListStart
+        \resumeItem{Designed and shipped internal developer tooling for a production GPU rendering stack, taking it from proposal through design, implementation, on-device validation, and multi-round code review with senior engineers toward integration into a shared release branch}
+        \resumeItem{Built cross-platform CLI tooling and wrote internal architecture documentation of the subsystems involved, verified against source, to make the workflow usable by other engineers after the internship. Tool accelerates certain internal development workflow speed by 4x and is merged into code base main branch}
+        \resumeItem{Screened, triaged, and fixed various system UI rendering bugs reported throughout the iOS/macOS 27.0 beta releases. Actively collaborated with other Apple internal teams to minimize regression before each public release}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  %-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{ButterFlight - Butterfly Flight Animation Authoring Tool} $|$ \emph{Maya, C++}}{Feb 2026 -- May 2026}
+  \resumeItemListStart
+  \resumeItem{Developed Maya 2026 C++ plug-in (\texttt{.mll}) with team of 2 that automates physically plausible butterfly flight animation based on Chen et al.\ 2022 ACM SIGGRAPH paper, enabling VFX artists to populate scenes with butterflies without manual keyframing or aerodynamics knowledge}
+  \resumeItem{Implemented three-module physics pipeline: parametric 5-DOF joint-angle modeling (thorax pitch, wing flap/feather/sweep, abdomen at $-180^\circ$ phase offset) driving a hierarchical skeleton; per-wing quasi-steady aerodynamic lift and drag from Ellington 1984 theory; and a curl-noise vortex field for the chaotic trajectory noise characteristic of real butterfly flight}
+  \resumeItem{Developed swarm simulation of up to 100 agents with inter-agent repulsion, NURBS path-following, and time-varying wind, driven by a MEL artist UI of 7 collapsible parameter sections that bakes output to standard Maya \texttt{animCurve} keyframes exportable to Alembic or FBX}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{Umbra - Light \& Shadow Puzzle Game} $|$ \emph{Unreal, C++}}{Feb 2026 -- Apr 2026}
+  \resumeItemListStart
+  \resumeItem{Shipped a top-down puzzle game in Unreal Engine 5 where the player traverses shadows cast by movable lights; authored 37 of 59 gameplay source files and 60\% of all commits in a team of 3 delivering the Windows and macOS release}
+  \resumeItem{Architected \texttt{UUmbraLightSubsystem}, a \texttt{UWorldSubsystem} registry holding every shadow-casting light and traversable shadow bridge as \texttt{TWeakObjectPtr}, plus the per-tick occlusion test that line-traces from the pawn's feet to each registered light and emits state-transition events consumed by the fall/respawn, bridge traversal, and HUD systems}
+  \resumeItem{Independently ported the shipped title to iOS post-release, building a custom touch-thumbstick widget, responsive mobile UMG layout, and Enhanced Input touch bindings, and packaging the v1.1 build solo}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{IcePEAK - Quest 3 VR Ice-Climbing Game} $|$ \emph{Unity, C\#, XR Interaction Toolkit}}{Apr 2026 -- May 2026}
+  \resumeItemListStart
+  \resumeItem{Built the ice-pick climbing system, the signature mechanic of a first-person VR climbing game for Meta Quest 3 developed in a team of 3: swing detection samples the pick \emph{tip} rather than the controller over a rolling frame window, deriving lever-arm velocity so a wrist flick registers as a true swing and gating embed on a tunable speed threshold}
+  \resumeItem{Implemented full-body climbing locomotion by applying the inverse of each hand's per-frame controller delta to the XR Origin, averaging both deltas during two-handed holds and re-sampling after every move to eliminate oscillation feedback}
+  \resumeItem{Architected the pick core as an event-driven system exposing \texttt{OnEmbedded}/\texttt{OnReleased} seams so teammates could add ice destruction, checkpoints, and gadgets without touching pick code, with all tuning values exposed as designer-editable Inspector parameters}
+  \resumeItemListEnd
+
+
+\resumeSubHeadingListEnd
+
+
+
+
+\enlargethispage{40pt}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Programming}{: C++, C\#, Python, MEL, Objective-C, CUDA, GLSL, MSL, WGSL, Bash} \\
+    \textbf{Animation \& Tools}{: Maya C++ API, MEL/Python scripting, DCC plug-in development, rigging \& skeleton hierarchies, animCurve keyframe baking, FBX/Alembic export, artist-facing tool UI} \\
+    \textbf{Math}{: Linear algebra, quaternions \& transform hierarchies, numerical integration, splines/NURBS, physics simulation} \\
+    \textbf{Engines \& Tools}{: Unreal Engine 5, Unity, UMG/Slate, Metal, Vulkan, OpenGL, Visual Studio, Xcode, Git, CMake, Qt}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

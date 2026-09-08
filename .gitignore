@@ -4,3 +4,4 @@
 *.synctex.gz
 ignored/
 head.jpg
+.DS_Store

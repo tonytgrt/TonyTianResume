@@ -213,6 +213,27 @@
     \resumeSubHeadingListStart
 
     \resumeProjectHeading
+          {\textbf{IcePEAK - Quest 3 VR Ice-Climbing Game} $|$ \emph{Unity 6, C\#, XR Interaction Toolkit, URP}}{Apr 2026 -- May 2026}
+          \resumeItemListStart
+          \resumeItem{Built the ice-pick climbing system, the signature mechanic of a first-person VR climbing game for Meta Quest 3, in a team of 3 on Unity 6.3 LTS with URP 17.3, XR Interaction Toolkit 3.3.1, OpenXR and Meta XR SDK}
+          \resumeItem{Engineered \texttt{SwingDetector} to sample the pick \emph{tip} rather than the controller across a rolling 5-frame window, deriving lever-arm velocity so a wrist flick registers as a true swing, and gating surface embedding on a tunable speed threshold}
+          \resumeItem{Implemented full-body climbing locomotion by computing each hand's per-frame controller delta and applying its inverse to the XR Origin, averaging both deltas during two-handed holds and re-sampling controller positions after every move to eliminate oscillation feedback}
+          \resumeItem{Architected the pick core as an event-driven system exposing \texttt{OnEmbedded}/\texttt{OnReleased} integration seams, letting teammates add ice destruction, checkpoints, and gadget systems without modifying pick code; exposed all tuning values as \texttt{[SerializeField]} parameters for designer iteration in-editor}
+          \resumeItem{Developed the breakable-ice system: crack decal meshes projected and conformed to arbitrary collider surfaces, animated through a sprite sheet on a per-embed timer before shattering into physics debris, plus fall/respawn handling and a remote-piloted drone gadget}
+          \resumeItem{Ran structured A/B playtesting on core mechanics and folded the findings back into tuned thresholds and a redesigned grip/release input scheme}
+          \resumeItemListEnd
+
+    \resumeProjectHeading
+          {\textbf{Umbra - Light \& Shadow Puzzle Game} $|$ \emph{Unreal Engine 5, C++, UMG/Slate}}{Feb 2026 -- Apr 2026}
+          \resumeItemListStart
+          \resumeItem{Shipped a top-down puzzle game in Unreal Engine 5.7 where the player traverses shadows cast by movable lights, releasing packaged macOS and iOS builds with a tutorial and four levels; authored 37 of the project's 59 gameplay source files and 60\% of all commits in a team of 3}
+          \resumeItem{Architected \texttt{UUmbraLightSubsystem}, a \texttt{UWorldSubsystem} registry where every shadow-casting light and traversable shadow bridge self-registers on \texttt{BeginPlay} and unregisters on \texttt{EndPlay}, stored as \texttt{TWeakObjectPtr} so destroyed actors drop out without dangling references}
+          \resumeItem{Implemented the core shadow-occlusion test driving all gameplay: per-tick line traces from the pawn's feet toward every registered light with tag-based trace filtering, flagging the pawn in-shadow only when all sources are blocked and emitting state-transition events consumed by fall/respawn, bridge traversal, and HUD systems}
+          \resumeItem{Built the complete UMG/Slate front end (main menu, in-game HUD, pause with background blur, level-cleared and tutorial-complete screens) and a custom touch-thumbstick widget with responsive mobile layout for the iOS port, routed through Enhanced Input}
+          \resumeItem{Delivered against a fixed three-milestone schedule (prototype, beta, final), coordinating merges across 3 contributors through pull-request review on a shared Unreal project}
+          \resumeItemListEnd
+
+    \resumeProjectHeading
           {\textbf{Metal Liquid Glass Renderer} $|$ \emph{Metal, MSL, Objective-C++, MetalKit}}{Feb 2026}
           \resumeItemListStart
           \resumeItem{Built multi-pass GPU compositing system in Apple Metal rendering a physically-based liquid glass panel over a runtime-loaded background, implementing custom \texttt{MTLRenderPipelineState} objects and off-screen \texttt{MTLTexture} targets within an \texttt{MTKView} delegate render loop}
