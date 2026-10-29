@@ -1,0 +1,83 @@
+%-------------------------
+% Cover Letter in LaTeX
+% Tony Yiding Tian - Rockstar North, Animation Tools Programmer
+% Styled to match resume_rstar.tex
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{parskip}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Match resume margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedright
+\setlength{\parskip}{0.9em}
+
+% ATS-parsable output
+\pdfgentounicode=1
+
+\begin{document}
+
+%----------HEADING (matches resume)----------
+\begin{center}
+    \textbf{\Huge \scshape Tony Yiding Tian} \\ \vspace{1pt}
+    \small Philadelphia, PA $|$ (267)249-1202 $|$ \href{mailto:tonytg@engineering.upenn.edu}{\underline{tonytg@engineering.upenn.edu}} $|$
+    \href{https://tonyxtian.com}{\underline{tonyxtian.com}}
+\end{center}
+
+\vspace{0.5em}
+\hrule
+\vspace{1.5em}
+
+\today
+
+\vspace{0.5em}
+
+Tools Team Hiring Manager \\
+Rockstar North \\
+Edinburgh, Scotland
+
+\vspace{1em}
+
+\textbf{Re: Animation Tools Programmer (All Levels)}
+
+\vspace{0.5em}
+
+Dear Hiring Team,
+
+I was ten years old, in China, when I first played \emph{Grand Theft Auto: Vice City}. I have played every Rockstar title since, and I have been in \emph{Grand Theft Auto Online} continuously for nine years now, since 2017. Those games did something to me I did not have a word for at the time. The way a character's weight shifted as they turned, the way the city looked at dusk --- that pulled me toward computer graphics, and the world they were set in pulled me toward American culture. Both are why I came to the United States to study. I am applying for the Animation Tools Programmer role because it is the job I have been walking toward since I was ten.
+
+I am completing a B.S.E. in Computer Engineering and an accelerated M.S.E. in Computer Graphics at the University of Pennsylvania in May 2027. The work closest to your team is ButterFlight, a Maya 2026 C++ plug-in I built with one other engineer that generates physically plausible butterfly flight animation. It runs a three-module physics pipeline --- parametric joint-angle modelling over a hierarchical skeleton, per-wing quasi-steady aerodynamic forces, and a curl-noise vortex field --- behind a MEL artist UI, and bakes to standard Maya \texttt{animCurve} keyframes that export to Alembic or FBX. The engineering that mattered was not the aerodynamics. It was deciding which parameters an artist should actually see, and making sure the output arrived in the pipeline as ordinary keyframes rather than something bespoke that only I could maintain.
+
+That instinct --- build what the artists need, then get out of their way --- is also what I did at Apple this past summer as a UI Rendering GPU intern, taking internal developer tooling for a production rendering stack from proposal through on-device validation and multi-round code review into a shared release branch, where it cut a specific internal workflow to a quarter of its previous time. Alongside that I have shipped games in both C++ and C\#: \emph{Umbra}, an Unreal Engine 5 puzzle game built on a shadow-occlusion system where I wrote most of the gameplay code across a team of three and then ported the shipped title to iOS on my own, and \emph{IcePEAK}, a Quest 3 VR climbing game in Unity and C\# where I owned the core pick-and-climb mechanic and designed it so my teammates could extend it without touching my code.
+
+I have followed every piece of \emph{Grand Theft Auto VI} coverage closely, and the detail that stays with me is the reported 600,000+ animations. That figure does not read to me as marketing. It reads as a statement about how much tooling has to exist before a team can author at that scale, and about a studio that treats animation as something worth building an entire discipline around. I would like to help build the tools that make numbers like that possible.
+
+I expect to qualify for the UK High Potential Individual visa upon graduating, so I can begin work without requiring sponsorship, and I am available from May 2027. Thank you for your time and consideration.
+
+\vspace{1em}
+
+Sincerely, \\
+\vspace{0.5em}
+Tony Yiding Tian
+
+\end{document}
