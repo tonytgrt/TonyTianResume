@@ -1,0 +1,197 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\input{glyphtounicode}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.0in}
+
+
+\urlstyle{same}
+
+%\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+% Adjust underline depth to be closer to text
+\renewcommand{\ULdepth}{2.5pt}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-7pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tony Yiding Tian} \\ \vspace{1pt}
+    \small Philadelphia, PA $|$ (267)249-1202 $|$ \href{mailto:tonytg@engineering.upenn.edu}{\underline{tonytg@engineering.upenn.edu}} $|$
+    \href{https://tonyxtian.com}{\underline{tonyxtian.com}} $|$
+    \href{https://github.com/tonytgrt}{\underline{github.com/tonytgrt}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Pennsylvania}{Philadelphia, PA}
+      {B.S.E. in Computer Engineering \& Accelerated M.S.E. in Computer Graphics}{May 2027}
+      \resumeItemListStart
+        \resumeItem{GPA: 3.79 | Relevant Courses: Operating Systems Implementation, Data Structures \& Algorithms, Computer Organization \& Design, GPU Programming, Embedded Systems, iOS Programming, Advanced Rendering, Machine Learning}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {UI Rendering GPU Software Engineer Intern}{May 2026 -- Aug 2026}
+      {Apple}{Cupertino, CA}
+      \resumeItemListStart
+        \resumeItem{Designed and shipped internal developer tooling for Apple's Core Animation GPU rendering stack, from proposal through design, implementation, on-device validation, and multi-round code review with senior engineers; merged into the main branch and sped up a core internal development workflow by 4x}
+        \resumeItem{Engineered a thread-safe publish/observe mechanism in a large, performance-sensitive C++ codebase, replacing a per-consumer duplication scheme so a shared GPU resource is built once and referenced by every consumer}
+        \resumeItem{Applied compiler-enforced thread-safety annotations to shared mutable state so lock violations fail the build, and added runtime assertions for an invariant static analysis could not express across differing ownership models}
+        \resumeItem{Reduced net code size while adding functionality by unifying two near-duplicate cache-invalidation paths behind one parameterized helper, eliminating unnecessary GPU pipeline recompilation on the narrower path}
+        \resumeItem{Triaged and fixed system UI rendering bugs throughout the iOS/macOS 27 beta cycle, diagnosing defects reproducible only in specific SDK and CPU-architecture build configurations; built cross-platform CLI tooling and wrote architecture docs verified against source}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Linux Kernel Policies Research Assistant - PURM Scholar}{May 2025 -- Aug 2025}
+      {Learning Directed Operating System (\href{https://ldos.utexas.edu/}{\uline{LDOS}}), Prof. Sebastian Angel}{Philadelphia, PA}
+      \resumeItemListStart
+        \resumeItem{Developed eBPF-based kernel monitoring infrastructure collecting real-time TCP metrics from 5 core kernel functions (tcp\_v4\_rcv, tcp\_v4\_connect, tcp\_rcv\_state\_process, congestion control, and CUBIC)}
+        \resumeItem{Engineered a data analysis pipeline processing 10,000+ TCP state transitions per second to identify performance bottlenecks in kernel networking policies and congestion control algorithms}
+        \resumeItem{Contributed 2,000+ lines of C and Python to the open-source \href{https://github.com/tonytgrt/KernMLOps}{\uline{KernMLOps}} repo, implementing kernel probing infrastructure used by 15+ researchers}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{PennOS - UNIX-like Operating System} $|$ \emph{C, POSIX, GDB}}{Mar 2025 -- May 2025}
+      \resumeItemListStart
+        \resumeItem{Built a user-level operating system in C with a team of 4 (8,000+ lines): process control blocks, PID allocation, parent-child relationships, signal delivery (SIGTERM/SIGSTOP/SIGCONT), and zombie reaping}
+        \resumeItem{Implemented a preemptive 3-level priority scheduler with 10ms round-robin quanta and a POSIX-style shell with job control (fg/bg/jobs/kill), I/O redirection, pipelines, and script execution}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{CUDA Path Tracer - GPU PBR Renderer} $|$ \emph{CUDA, C++, GLSL}}{Sep 2025 -- Oct 2025}
+      \resumeItemListStart
+      \resumeItem{Monte Carlo path tracer with BSDF shading kernels for global illumination, multiple importance sampling, and subsurface scattering; integrated tinyGLTF for glTF 2.0 loading and NVIDIA OptiX for denoising}
+      \resumeItem{Profiled with Nsight and optimized via BVH acceleration (3$\times$--160$\times$ framerate on complex scenes), stream compaction (+24--67\%), Russian roulette (+6--24\%), and material sorting. \href{https://github.com/tonytgrt/CUDA-Path-Tracer}{\uline{github.com/tonytgrt/CUDA-Path-Tracer}}}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{MatForge - Vulkan Ray Tracing Material Renderer} $|$ \emph{Vulkan, Slang, C++}}{Nov 2025 -- Dec 2025}
+      \resumeItemListStart
+      \resumeItem{Implemented four SIGGRAPH papers (2023--2024) in a unified Vulkan ray tracing pipeline, contributing 2,400+ lines of C++ and Slang for sampling and geometry systems}
+      \resumeItem{Built a base-3 Sobol' sampler with Owen scrambling across 47 dimensions, achieving 44.7\% MSE reduction vs. PCG sampling at 512 SPP with $<$1\% overhead, plus an automated convergence benchmarking framework}
+      \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+\enlargethispage{20pt}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Languages}{: C/C++, Python, Java, Objective-C, Swift, CUDA, C\#, TypeScript, GLSL/MSL/WGSL, Bash} \\
+    \textbf{Systems}{: Linux, eBPF, multithreading \& concurrency, POSIX, GDB, CMake, Make, Git, Docker, Xcode} \\
+    \textbf{Graphics \& GPU}{: Metal, Vulkan, OpenGL, WebGPU, NVIDIA Nsight, Unreal Engine 5, Unity}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
